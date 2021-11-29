@@ -5,25 +5,42 @@ import java.util.Scanner;
 public class Exercicio2 {
 
     public static void main(String[] args) {
-        double salary = 0, aliquot = 0;
+        final double TETO_FAIXA1 = 1100;
+        final double TETO_FAIXA2 = 2203.48;
+        final double TETO_FAIXA3 = 3305.22;
+        final double TETO_FAIXA4 = 6433.57;
+
+        final double ALIQUOTA_FAIXA1 = 0.075;
+        final double ALIQUOTA_FAIXA2 = 0.09;
+        final double ALIQUOTA_FAIXA3 = 0.12;
+        final double ALIQUOTA_FAIXA4 = 0.14;
+
+        double salary, imposto = 0;
 
         System.out.println("Entre com o valor do salário:");
         Scanner input = new Scanner(System.in);
 
         salary = Float.parseFloat(input.nextLine());
 
-        if (salary <= 1100){
-            aliquot = (salary * 0.075);
-        }else if (salary >= 1100.01 && salary <= 2203.48){
-            aliquot =  ((salary - 1100) * 0.09) + (1100 * 0.075);
-        }else if (salary >= 2203.49 && salary <= 3305.22){
-            aliquot =  ((salary - 2203.49) * 0.12) + ((2203.48 - 1100) * 0.09) + (1100 * 0.075) ;
-        }else if (salary >= 3305.23 && salary <= 6433.57){
-            aliquot =  ((salary - 3305.23) * 0.14) + ((3305.22 - 2203.49) * 0.12) + ((2203.48 - 1100) * 0.09) + (1100 * 0.075);
-        }else if (salary > 6433.57){
-            aliquot =  ((6433.57 - 3305.23) * 0.14) + ((3305.22 - 2203.49) * 0.12) + ((2203.48 - 1100) * 0.09) + (1100 * 0.075);
+        if (salary <= TETO_FAIXA1) {
+            imposto = (salary * ALIQUOTA_FAIXA1);
+
+        } else if (salary > TETO_FAIXA1 && salary <= TETO_FAIXA2) {
+            imposto = ((salary - TETO_FAIXA1) * ALIQUOTA_FAIXA2) + (TETO_FAIXA1 * ALIQUOTA_FAIXA1);
+
+        } else if (salary > TETO_FAIXA2 && salary <= TETO_FAIXA3) {
+            imposto = ((salary - TETO_FAIXA2) * ALIQUOTA_FAIXA3) + ((TETO_FAIXA2 - TETO_FAIXA1) * ALIQUOTA_FAIXA2)
+                    + (TETO_FAIXA1 * ALIQUOTA_FAIXA1);
+
+        } else if (salary > TETO_FAIXA3 && salary <= TETO_FAIXA4) {
+            imposto = ((salary - TETO_FAIXA3) * ALIQUOTA_FAIXA4) + ((TETO_FAIXA3 - TETO_FAIXA2) * ALIQUOTA_FAIXA3)
+                    + ((TETO_FAIXA2 - TETO_FAIXA1) * ALIQUOTA_FAIXA2) + (TETO_FAIXA1 * ALIQUOTA_FAIXA1);
+
+        } else if (salary > TETO_FAIXA4) {
+            imposto = ((TETO_FAIXA4 - TETO_FAIXA3) * ALIQUOTA_FAIXA4) + ((TETO_FAIXA3 - TETO_FAIXA2) * ALIQUOTA_FAIXA3)
+                    + ((TETO_FAIXA2 - TETO_FAIXA1) * ALIQUOTA_FAIXA2) + (TETO_FAIXA1 * ALIQUOTA_FAIXA1);
         }
 
-        System.out.format("valor da alíquota: R$ %.2f",aliquot);
+        System.out.format("valor do imposto é: R$ %.2f", imposto);
     }
 }
