@@ -22,20 +22,20 @@ public class Exercicio1 {
 
         salary = Float.parseFloat(input.nextLine());
 
-        if (salary <= TETO_FAIXA1){
+        if (salary <= TETO_FAIXA1) {
             imposto = (salary * ALIQUOTA_FAIXA1);
 
-        }else if (salary > TETO_FAIXA1 && salary <= TETO_FAIXA2){
+        } else if (salary > TETO_FAIXA1 && salary <= TETO_FAIXA2) {
             imposto = (salary * ALIQUOTA_FAIXA2);
 
-        }else if (salary > TETO_FAIXA2 && salary <= TETO_FAIXA3){
+        } else if (salary > TETO_FAIXA2 && salary <= TETO_FAIXA3) {
             imposto = (salary * ALIQUOTA_FAIXA3);
 
-        }else if (salary > TETO_FAIXA3 && salary <= TETO_FAIXA4){
+        } else if (salary > TETO_FAIXA3 && salary <= TETO_FAIXA4) {
             imposto = (salary * ALIQUOTA_FAIXA4);
         }
 
-        System.out.println("valor do imposto é: R$"+ imposto);
+        System.out.println("valor do imposto é: R$" + imposto);
 
     }
 }

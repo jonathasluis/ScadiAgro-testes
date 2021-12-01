@@ -23,26 +23,26 @@ public class Exercicio3 {
         numeroParcelas = Integer.parseInt(input.nextLine());
 
         valorParcela = new BigDecimal[numeroParcelas];
-        auxiliarDiv = valorEmprestimo.divide(BigDecimal.valueOf(numeroParcelas),2, RoundingMode.HALF_DOWN);
+        auxiliarDiv = valorEmprestimo.divide(BigDecimal.valueOf(numeroParcelas), 2, RoundingMode.HALF_DOWN);
 
-        for (int i = 0; i < numeroParcelas; i++){
+        for (int i = 0; i < numeroParcelas; i++) {
             valorParcela[i] = auxiliarDiv;
         }
 
         auxiliarValor = new BigDecimal(0);
 
-        for (int i = 0; i < numeroParcelas; i++){
+        for (int i = 0; i < numeroParcelas; i++) {
             auxiliarValor = auxiliarValor.add(valorParcela[i]);
         }
 
         auxiliarValor = valorEmprestimo.subtract(auxiliarValor);
 
-        if (!auxiliarValor.equals(BigDecimal.ZERO)){
-            valorParcela[numeroParcelas - 1] = valorParcela[numeroParcelas -1].add(auxiliarValor);
+        if (!auxiliarValor.equals(BigDecimal.ZERO)) {
+            valorParcela[numeroParcelas - 1] = valorParcela[numeroParcelas - 1].add(auxiliarValor);
         }
 
         for (int i = 0; i < numeroParcelas; i++) {
-            System.out.println("PARCELA " + (i+1) + ": " + valorParcela[i]);
+            System.out.println("PARCELA " + (i + 1) + ": " + valorParcela[i]);
         }
     }
 }

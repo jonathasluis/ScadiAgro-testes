@@ -1,64 +1,12 @@
-package exercicios;
+package exercicios.ex5_6;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Funcionario {
-    private static int quantidadeFuncionario = 0;
-    private static double somaSalario = 0;
-
-    public int codFuncionario;
-    public String nomeFuncionario;
-    public String valorSalario;
-    public LocalDate dataAdmissao;
-
-    public Funcionario(int codFunc, String nome, String salario, LocalDate admissao) {
-        this.codFuncionario = codFunc;
-        this.nomeFuncionario = nome;
-        this.valorSalario = salario;
-        this.dataAdmissao = admissao;
-
-        quantidadeFuncionario++;
-        somaSalario += Double.parseDouble(salario);
-    }
-
-    public static double calculaMedia() {
-        return somaSalario / quantidadeFuncionario;
-    }
-
-    public double convertSalario() {
-        return Double.parseDouble(this.valorSalario);
-    }
-
-    public void printFuncionario(String prefix, String sufix) {
-        DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-        String output = prefix + this.codFuncionario + " - " + this.nomeFuncionario + " - R$" +
-                this.valorSalario + " - " + this.dataAdmissao.format(formatoData) + sufix;
-
-        System.out.println(output);
-    }
-
-    public String difDate(LocalDate atual) {
-        long diferencaEmDias = ChronoUnit.DAYS.between(this.dataAdmissao, atual);
-
-        return " - tempo de empresa: " + diferencaEmDias + " dias";
-    }
-
-    //DESNECESSARIOS, MAIN ESTA NA MESMA CLASSE
-    public static int totalFunc() {
-        return quantidadeFuncionario;
-    }
-
-    public static double salarios() {
-        return somaSalario;
-    }
-
+public class Exercicio5 {
     public static void main(String[] args) {
-
         ArrayList<Funcionario> listaDeFuncionarios = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -95,7 +43,7 @@ public class Funcionario {
         }
 
         //Total de funcionarios
-        quantidadeFunc = Funcionario.totalFunc();
+        quantidadeFunc = Funcionario.getQuantidadeFuncionario();
         System.out.println("\nTotal de funcionarios: " + quantidadeFunc + "\n");
 
         //Lista completa de funcionários mostrando o tempo de empresa de cada um deles
@@ -106,12 +54,12 @@ public class Funcionario {
             funcionario = listaDeFuncionarios.get(i);
             diferencaDataDias = funcionario.difDate(dataAtual);
 
-            funcionario.printFuncionario("", diferencaDataDias);
+            System.out.println(funcionario + diferencaDataDias);
 
         }
 
         //Soma dos Salário
-        System.out.println("\nSoma dos salarios: R$" + Funcionario.salarios());
+        System.out.println("\nSoma dos salarios: R$" + Funcionario.getSomaSalario());
 
         //Média dos Salários
         System.out.println("\nMedia dos salarios: R$" + Funcionario.calculaMedia());
@@ -129,10 +77,8 @@ public class Funcionario {
             }
         }
 
-        funcMenorSalario.printFuncionario("\nMenor Salario: ", "");
-        funcMaiorSalario.printFuncionario("\nMaior Salario: ", "");
+        System.out.println("\nMenor Salario: " + funcMenorSalario);
+        System.out.println("\nMaior Salario: " + funcMaiorSalario);
 
     }
 }
-
-
