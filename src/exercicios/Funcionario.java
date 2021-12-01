@@ -132,7 +132,6 @@ public class Funcionario {
         funcMenorSalario.printFuncionario("\nMenor Salario: ", "");
         funcMaiorSalario.printFuncionario("\nMaior Salario: ", "");
 
-
     }
 }
 
