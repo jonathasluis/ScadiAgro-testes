@@ -94,10 +94,11 @@ public class Funcionario {
             listaDeFuncionarios.add(funcionario);
         }
 
+        //Total de funcionarios
         quantidadeFunc = Funcionario.totalFunc();
         System.out.println("\nTotal de funcionarios: " + quantidadeFunc + "\n");
 
-
+        //Lista completa de funcionários mostrando o tempo de empresa de cada um deles
         for (int i = 0; i < quantidadeFunc; i++) {
             Funcionario funcionario;
             String diferencaDataDias;
@@ -109,10 +110,13 @@ public class Funcionario {
 
         }
 
+        //Soma dos Salário
         System.out.println("\nSoma dos salarios: R$" + Funcionario.salarios());
 
+        //Média dos Salários
         System.out.println("\nMedia dos salarios: R$" + Funcionario.calculaMedia());
 
+        //Dados do Maior e do Menor Salário
         funcMenorSalario = listaDeFuncionarios.get(0);
         funcMaiorSalario = listaDeFuncionarios.get(0);
 
