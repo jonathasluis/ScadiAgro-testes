@@ -43,7 +43,7 @@ public class Exercicio5 {
         }
 
         //Total de funcionarios
-        quantidadeFunc = Funcionario.getQuantidadeFuncionario();
+        quantidadeFunc = listaDeFuncionarios.size();
         System.out.println("\nTotal de funcionarios: " + quantidadeFunc + "\n");
 
         //Lista completa de funcionários mostrando o tempo de empresa de cada um deles
@@ -62,7 +62,7 @@ public class Exercicio5 {
         System.out.println("\nSoma dos salarios: R$" + Funcionario.getSomaSalario());
 
         //Média dos Salários
-        System.out.println("\nMedia dos salarios: R$" + Funcionario.calculaMedia());
+        System.out.println("\nMedia dos salarios: R$" + Funcionario.calculaMedia(quantidadeFunc));
 
         //Dados do Maior e do Menor Salário
         funcMenorSalario = listaDeFuncionarios.get(0);

@@ -6,6 +6,7 @@ public class Lista {
 
     private Funcionario primeiro;
     private Funcionario ultimo;
+
     private int tamanho;
 
     public Lista() {
@@ -15,17 +16,15 @@ public class Lista {
     }
 
     public void insereFim(int codFunc, String nome, String salario, LocalDate admissao) {
-
         Funcionario novo = new Funcionario(codFunc, nome, salario, admissao);
 
         if (vazia()) {
             primeiro = novo;
-            ultimo = novo;
         } else {
             ultimo.setProximo(novo);
             novo.setAnterior(ultimo);
-            ultimo = novo;
         }
+        ultimo = novo;
         tamanho++;
     }
 
@@ -51,4 +50,52 @@ public class Lista {
         return (tamanho == 0);
     }
 
+    public void ordenacaoPorCodigo() {
+        Funcionario atual = primeiro, index;
+
+        Funcionario temp = new Funcionario();
+
+        while (atual != null) {
+            index = atual.getProximo();
+
+            while (index != null) {
+                if (atual.getCodFuncionario() > index.getCodFuncionario()) {
+                    temp.replace(atual);
+                    atual.replace(index);
+                    index.replace(temp);
+                }
+                index = index.getProximo();
+            }
+            atual = atual.getProximo();
+        }
+    }
+
+    public void ordenacaoPorNome() {
+        Funcionario atual = primeiro, index;
+
+        Funcionario temp = new Funcionario();
+
+        while (atual != null) {
+            index = atual.getProximo();
+
+            while (index != null) {
+
+                if (atual.getNomeFuncionario().compareToIgnoreCase(index.getNomeFuncionario()) > 0) {
+                    temp.replace(atual);
+                    atual.replace(index);
+                    index.replace(temp);
+                }
+                index = index.getProximo();
+            }
+            atual = atual.getProximo();
+        }
+    }
+
+    public Funcionario getPrimeiro() {
+        return primeiro;
+    }
+
+    public int getTamanho() {
+        return tamanho;
+    }
 }

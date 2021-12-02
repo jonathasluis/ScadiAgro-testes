@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class Funcionario {
-    private static int quantidadeFuncionario = 0;
     private static double somaSalario = 0;
 
     private int codFuncionario;
@@ -25,11 +24,20 @@ public class Funcionario {
         proximo = null;
         anterior = null;
 
-        quantidadeFuncionario++;
         somaSalario += Double.parseDouble(salario);
     }
 
-    public static double calculaMedia() {
+    public Funcionario() {
+        this.codFuncionario = 0;
+        this.nomeFuncionario = null;
+        this.valorSalario = null;
+        this.dataAdmissao = null;
+
+        proximo = null;
+        anterior = null;
+    }
+
+    public static double calculaMedia(int quantidadeFuncionario) {
         return somaSalario / quantidadeFuncionario;
     }
 
@@ -51,12 +59,12 @@ public class Funcionario {
         return " - tempo de empresa: " + diferencaEmDias + " dias";
     }
 
-    public static int getQuantidadeFuncionario() {
-        return quantidadeFuncionario;
-    }
-
     public static double getSomaSalario() {
         return somaSalario;
+    }
+
+    public void setCodFuncionario(int codFuncionario) {
+        this.codFuncionario = codFuncionario;
     }
 
     public int getCodFuncionario() {
@@ -89,6 +97,25 @@ public class Funcionario {
 
     public void setAnterior(Funcionario anterior) {
         this.anterior = anterior;
+    }
+
+    public void setNomeFuncionario(String nomeFuncionario) {
+        this.nomeFuncionario = nomeFuncionario;
+    }
+
+    public void setValorSalario(String valorSalario) {
+        this.valorSalario = valorSalario;
+    }
+
+    public void setDataAdmissao(LocalDate dataAdmissao) {
+        this.dataAdmissao = dataAdmissao;
+    }
+
+    public void replace(Funcionario func) {
+        this.setCodFuncionario(func.getCodFuncionario());
+        this.setNomeFuncionario(func.getNomeFuncionario());
+        this.setDataAdmissao(func.getDataAdmissao());
+        this.setValorSalario(func.getValorSalario());
     }
 }
 
