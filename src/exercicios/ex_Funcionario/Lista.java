@@ -1,6 +1,8 @@
-package exercicios.ex5_6;
+package exercicios.ex_Funcionario;
 
+import java.io.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Lista {
 
@@ -13,6 +15,18 @@ public class Lista {
         tamanho = 0;
         primeiro = null;
         ultimo = null;
+    }
+
+    public Funcionario getPrimeiro() {
+        return primeiro;
+    }
+
+    public int getTamanho() {
+        return tamanho;
+    }
+
+    public boolean vazia() {
+        return (tamanho == 0);
     }
 
     public void insereFim(int codFunc, String nome, String salario, LocalDate admissao) {
@@ -44,10 +58,6 @@ public class Lista {
             System.out.println(aux);
             aux = aux.getAnterior();
         }
-    }
-
-    public boolean vazia() {
-        return (tamanho == 0);
     }
 
     public void ordenacaoPorCodigo() {
@@ -91,11 +101,39 @@ public class Lista {
         }
     }
 
-    public Funcionario getPrimeiro() {
-        return primeiro;
+    public void gravaLista(String nomeArquivo) throws IOException {
+        Funcionario aux = primeiro;
+        String dados;
+        BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo));
+        while (aux != null) {
+            dados = Format.formatarParaEscrita(aux);
+            buffWrite.append(dados).append("\n");
+            aux = aux.getProximo();
+        }
+        buffWrite.close();
     }
 
-    public int getTamanho() {
-        return tamanho;
+    public void leArquivo(String nomeArquivo) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader(nomeArquivo));
+        String linha;
+        while (true) {
+            linha = buffRead.readLine();
+            if (linha != null) {
+                DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                String formatado = Format.formatarDaLeitura(linha);
+                String[] formatadoSplit = formatado.split("\\|");
+
+                int codigo = Integer.parseInt(formatadoSplit[0]);
+                String nome = formatadoSplit[1];
+                Double salario = Double.parseDouble(formatadoSplit[2]);
+                LocalDate data = LocalDate.parse(formatadoSplit[3], formatoData);
+
+                this.insereFim(codigo, nome, String.format("%.2f",
+                        salario).replace(",", "."), data);
+            } else
+                break;
+        }
+        buffRead.close();
+
     }
 }

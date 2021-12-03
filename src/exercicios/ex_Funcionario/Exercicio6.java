@@ -1,5 +1,6 @@
-package exercicios.ex5_6;
+package exercicios.ex_Funcionario;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class Exercicio6 {
         while (true) {
             int codFuncionario;
             String nomeFuncionario;
-            String valorSalario;
+            double valorSalario;
             Scanner input = new Scanner(System.in);
             LocalDate dataAdmissao;
             DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -29,13 +30,14 @@ public class Exercicio6 {
             nomeFuncionario = input.nextLine();
 
             System.out.println("Salario funcionario: ");
-            valorSalario = input.nextLine();
+            valorSalario = Double.parseDouble(input.nextLine());
 
             System.out.println("data de admissao do funcionario (dd/MM/yyyy): ");
             String dataAux = input.nextLine();
             dataAdmissao = LocalDate.parse(dataAux, formatoData);
 
-            minhaLista.insereFim(codFuncionario, nomeFuncionario, valorSalario, dataAdmissao);
+            minhaLista.insereFim(codFuncionario, nomeFuncionario, String.format("%.2f",
+                    valorSalario).replace(",", "."), dataAdmissao);
         }
 
         //TOTAL DE FUNCIONARIOS
@@ -72,30 +74,46 @@ public class Exercicio6 {
         for (int i = 1; i < quantidadeFunc; i++) {
             if (funcMenorSalario.convertSalario() > funcMenorAux.convertSalario()) {
                 funcMenorSalario = funcMenorAux;
-            } else {
-                funcMenorAux = funcMenorAux.getProximo();
             }
+
+            funcMenorAux = funcMenorAux.getProximo();
 
             if (funcMaiorSalario.convertSalario() < funcMaiorAux.convertSalario()) {
                 funcMaiorSalario = funcMaiorAux;
-            } else {
-                funcMaiorAux = funcMaiorAux.getProximo();
             }
+            funcMaiorAux = funcMaiorAux.getProximo();
+
         }
 
         System.out.println("\nMenor Salario: " + funcMenorSalario);
         System.out.println("\nMaior Salario: " + funcMaiorSalario);
 
-        System.out.println("\n");
+        // GRAVA A LISTA NA ORDEM DE INSERCAO
+        try {
+            minhaLista.gravaLista("src/exercicios/ex_Funcionario/funcionario.dat");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        // ORDENACAO DA LISTA DUPLAMENTE ENCADEADA
-
+        // ORDENACAO DA LISTA DUPLAMENTE ENCADEADA PELO CODIGO E GRAVACAO NO ARQUIVO
         minhaLista.ordenacaoPorCodigo();
+
+        try {
+            minhaLista.gravaLista("src/exercicios/ex_Funcionario/funcionario_idx01.idx");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("\nLISTA ORDENADA POR CODIGO:");
         minhaLista.imprime();
 
-        System.out.println("\n");
-
+        // ORDENACAO DA LISTA DUPLAMENTE ENCADEADA PELO NOME E GRAVACAO NO ARQUIVO
         minhaLista.ordenacaoPorNome();
+        try {
+            minhaLista.gravaLista("src/exercicios/ex_Funcionario/funcionario_idx02.idx");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("\nLISTA ORDENADA POR NOME:");
         minhaLista.imprime();
     }
 }
