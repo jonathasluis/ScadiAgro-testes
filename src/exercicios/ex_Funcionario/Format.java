@@ -1,11 +1,6 @@
 package exercicios.ex_Funcionario;
 
-import java.io.*;
-import java.time.LocalDate;
-
 public class Format {
-
-
 
     public static String formatarParaEscrita(Funcionario func){
         String formatado = "";
@@ -43,22 +38,7 @@ public class Format {
             salario = complemento + salario;
 
             // DATA
-            LocalDate dataFunc = func.getDataAdmissao();
-            String dataFormatada;
-
-            String ano = String.valueOf(dataFunc.getYear());
-            String mes = String.valueOf(dataFunc.getMonthValue());
-            String dia = String.valueOf(dataFunc.getDayOfMonth());
-
-            if (mes.length() == 1){
-                mes = "0"+mes;
-            }
-
-            if (dia.length() == 1){
-                dia = "0"+dia;
-            }
-
-            dataFormatada = ano + "-" + mes + "-" + dia;
+            String dataFormatada = func.getDataAdmissao().toString();
 
             formatado = codigo + "|" + nome + "|" + salario + "|" + dataFormatada;
 
@@ -66,16 +46,14 @@ public class Format {
         return formatado;
     }
 
-    public static String formatarDaLeitura(String valor){
-        String formatado;
+    public static String[] formatarDaLeitura(String valor){
+        String[] formatado = new String[4];
         String[] split = valor.split("\\|");
-        String nome = split[1].trim();
 
-        String data = split[3].trim();
-        String[] dataSplit = data.split("-");
-        data = dataSplit[2] + "/" + dataSplit[1] + "/" + dataSplit[0];
-
-        formatado = split[0] + "|" + nome + "|" + split[2] + "|" + data;
+        formatado[0] = split[0];
+        formatado[1] = split[1].trim();
+        formatado[2] = split[2].replaceFirst("^0+(?!$)", "");
+        formatado[3] = split[3].trim();
 
         return formatado;
     }

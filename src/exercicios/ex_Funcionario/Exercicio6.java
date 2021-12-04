@@ -14,11 +14,12 @@ public class Exercicio6 {
         while (true) {
             int codFuncionario;
             String nomeFuncionario;
-            double valorSalario;
-            Scanner input = new Scanner(System.in);
+            String valorSalario;
             LocalDate dataAdmissao;
+            Scanner input = new Scanner(System.in);
             DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+            // CODIGO
             System.out.println("\nCodigo funcionario: ");
             codFuncionario = Integer.parseInt(input.nextLine());
 
@@ -26,18 +27,26 @@ public class Exercicio6 {
                 break;
             }
 
+            //NOME
             System.out.println("Nome funcionario: ");
             nomeFuncionario = input.nextLine();
 
+            //SALARIO
             System.out.println("Salario funcionario: ");
-            valorSalario = Double.parseDouble(input.nextLine());
+            valorSalario = input.nextLine();
 
+            valorSalario = valorSalario.replace(",",".");
+
+            if (!valorSalario.contains(".")){
+                valorSalario += ".00";
+            }
+
+            //DATA
             System.out.println("data de admissao do funcionario (dd/MM/yyyy): ");
             String dataAux = input.nextLine();
             dataAdmissao = LocalDate.parse(dataAux, formatoData);
 
-            minhaLista.insereFim(codFuncionario, nomeFuncionario, String.format("%.2f",
-                    valorSalario).replace(",", "."), dataAdmissao);
+            minhaLista.insereFim(codFuncionario, nomeFuncionario, valorSalario, dataAdmissao);
         }
 
         //TOTAL DE FUNCIONARIOS
