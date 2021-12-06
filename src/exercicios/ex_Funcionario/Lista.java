@@ -62,7 +62,7 @@ public class Lista {
 
     public Funcionario acessarPosicao(int posicao) {
         if (posicao < 0 || posicao >= tamanho) {
-            throw new IllegalArgumentException("Invalid position");
+            throw new ArrayIndexOutOfBoundsException("Index " + posicao + " out of bounds for length " + tamanho);
         }
         Funcionario auxiliar = primeiro;
         int localizacao = 0;
@@ -84,7 +84,7 @@ public class Lista {
                 removePosicao(posicao);
             }
         } else {
-            throw new IllegalArgumentException("Index " + posicao + " out of bounds for length " + tamanho);
+            throw new ArrayIndexOutOfBoundsException("Index " + posicao + " out of bounds for length " + tamanho);
         }
     }
 
