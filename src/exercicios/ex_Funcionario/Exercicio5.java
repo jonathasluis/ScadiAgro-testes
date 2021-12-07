@@ -59,10 +59,14 @@ public class Exercicio5 {
         }
 
         //Soma dos Salário
-        System.out.println("\nSoma dos salarios: R$" + Funcionario.getSomaSalario());
+        double soma = 0;
+        for (int i = 0; i < quantidadeFunc; i++) {
+            soma += listaDeFuncionarios.get(i).convertSalario();
+        }
+        System.out.println("\nSoma dos salarios: R$" + soma);
 
         //Média dos Salários
-        System.out.println("\nMedia dos salarios: R$" + Funcionario.calculaMedia(quantidadeFunc));
+        System.out.println("\nMedia dos salarios: R$" + soma / quantidadeFunc);
 
         //Dados do Maior e do Menor Salário
         funcMenorSalario = listaDeFuncionarios.get(0);

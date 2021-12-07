@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class Funcionario {
-    private static double somaSalario = 0;
 
     private int codFuncionario;
     private String nomeFuncionario;
@@ -18,13 +17,19 @@ public class Funcionario {
     public Funcionario(int codFunc, String nome, String salario, LocalDate admissao) {
         this.codFuncionario = codFunc;
         this.nomeFuncionario = nome;
+
+        salario = salario.replace(",", ".");
+
+        if (!salario.contains(".")) {
+            salario += ".00";
+        }
+
         this.valorSalario = salario;
         this.dataAdmissao = admissao;
 
         proximo = null;
         anterior = null;
 
-        somaSalario += Double.parseDouble(salario);
     }
 
     public Funcionario() {
@@ -35,10 +40,6 @@ public class Funcionario {
 
         proximo = null;
         anterior = null;
-    }
-
-    public static double calculaMedia(int quantidadeFuncionario) {
-        return somaSalario / quantidadeFuncionario;
     }
 
     public double convertSalario() {
@@ -57,10 +58,6 @@ public class Funcionario {
         long diferencaEmDias = ChronoUnit.DAYS.between(getDataAdmissao(), atual);
 
         return " - tempo de empresa: " + diferencaEmDias + " dias";
-    }
-
-    public static double getSomaSalario() {
-        return somaSalario;
     }
 
     public void setCodFuncionario(int codFuncionario) {

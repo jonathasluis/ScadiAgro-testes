@@ -39,12 +39,6 @@ public class Exercicio6_7 {
             System.out.println("Salario funcionario: ");
             valorSalario = input.nextLine();
 
-            valorSalario = valorSalario.replace(",",".");
-
-            if (!valorSalario.contains(".")){
-                valorSalario += ".00";
-            }
-
             //DATA
             System.out.println("data de admissao do funcionario (dd/MM/yyyy): ");
             String dataAux = input.nextLine();
@@ -58,48 +52,18 @@ public class Exercicio6_7 {
         System.out.println("\nTotal de funcionarios: " + quantidadeFunc + "\n");
 
         //LISTA COMPLETA DE FUNCIONÁRIOS MOSTRANDO O TEMPO DE EMPRESA DE CADA UM DELES (NAO ORDENADO)
-        Funcionario funcionario = minhaLista.getPrimeiro();
-
-        for (int i = 0; i < quantidadeFunc; i++) {
-            LocalDate dataAtual = LocalDate.now();
-            String diferencaDataDias;
-
-            diferencaDataDias = funcionario.difDate(dataAtual);
-            System.out.println(funcionario + diferencaDataDias);
-
-            funcionario = funcionario.getProximo();
-        }
+        minhaLista.diferencaDataTodosFunc();
 
         //SOMA DOS SALARIO
-        System.out.println("\nSoma dos salarios: R$" + Funcionario.getSomaSalario());
+        double somaSalarios = minhaLista.getSomaSalarios();
+        System.out.println("\nSoma dos salarios: R$" + somaSalarios);
 
         //MEDIA DOS SALARIO
-        System.out.println("\nMedia dos salarios: R$" + Funcionario.calculaMedia(quantidadeFunc));
+        System.out.println("\nMedia dos salarios: R$" + minhaLista.mediaSalarios(somaSalarios));
 
         //DADOS DO MAIOR E DO MENOR SALARIO
-
-        Funcionario funcMenorSalario = minhaLista.getPrimeiro();
-        Funcionario funcMaiorSalario = minhaLista.getPrimeiro();
-
-        Funcionario funcMenorAux = funcMenorSalario.getProximo();
-        Funcionario funcMaiorAux = funcMaiorSalario.getProximo();
-
-        for (int i = 1; i < quantidadeFunc; i++) {
-            if (funcMenorSalario.convertSalario() > funcMenorAux.convertSalario()) {
-                funcMenorSalario = funcMenorAux;
-            }
-
-            funcMenorAux = funcMenorAux.getProximo();
-
-            if (funcMaiorSalario.convertSalario() < funcMaiorAux.convertSalario()) {
-                funcMaiorSalario = funcMaiorAux;
-            }
-            funcMaiorAux = funcMaiorAux.getProximo();
-
-        }
-
-        System.out.println("\nMenor Salario: " + funcMenorSalario);
-        System.out.println("\nMaior Salario: " + funcMaiorSalario);
+        System.out.println("\nMenor Salario: " + minhaLista.menorSalario().getValorSalario());
+        System.out.println("\nMaior Salario: " + minhaLista.maiorSalario().getValorSalario());
 
         // GRAVA A LISTA NA ORDEM DE INSERCAO
         try {
@@ -107,6 +71,8 @@ public class Exercicio6_7 {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("\nLISTA NAO ORDENADA:");
+        minhaLista.imprime();
 
         // ORDENACAO DA LISTA DUPLAMENTE ENCADEADA PELO CODIGO E GRAVACAO NO ARQUIVO
         minhaLista.ordenacaoPorCodigo();
@@ -121,6 +87,7 @@ public class Exercicio6_7 {
 
         // ORDENACAO DA LISTA DUPLAMENTE ENCADEADA PELO NOME E GRAVACAO NO ARQUIVO
         minhaLista.ordenacaoPorNome();
+
         try {
             minhaLista.gravaLista(ARQUIVO_INDEXADO_NOME);
         } catch (IOException e) {

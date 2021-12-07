@@ -16,10 +16,6 @@ public class Lista {
         ultimo = null;
     }
 
-    public Funcionario getPrimeiro() {
-        return primeiro;
-    }
-
     public int getTamanho() {
         return tamanho;
     }
@@ -42,7 +38,7 @@ public class Lista {
     }
 
     public Funcionario buscarNaLista(int cod) {
-        Funcionario auxiliar = primeiro;
+        Funcionario auxiliar = this.primeiro;
         int posicao = 0;
 
         while (auxiliar != null) {
@@ -61,10 +57,10 @@ public class Lista {
     }
 
     public Funcionario acessarPosicao(int posicao) {
-        if (posicao < 0 || posicao >= tamanho) {
-            throw new IndexOutOfBoundsException("Index " + posicao + " out of bounds for length " + tamanho);
+        if (posicao < 0 || posicao >= this.tamanho) {
+            throw new IndexOutOfBoundsException("Index " + posicao + " out of bounds for length " + this.tamanho);
         }
-        Funcionario auxiliar = primeiro;
+        Funcionario auxiliar = this.primeiro;
         int localizacao = 0;
 
         while (posicao > localizacao) {
@@ -75,26 +71,26 @@ public class Lista {
     }
 
     public void remove(int posicao) {
-        if (posicao >= 0 && posicao < tamanho) {
+        if (posicao >= 0 && posicao < this.tamanho) {
             if (posicao == 0) {
                 removeInicio();
-            } else if (posicao == tamanho - 1) {
+            } else if (posicao == this.tamanho - 1) {
                 removeFim();
             } else {
                 removePosicao(posicao);
             }
         } else {
-            throw new IndexOutOfBoundsException("Index " + posicao + " out of bounds for length " + tamanho);
+            throw new IndexOutOfBoundsException("Index " + posicao + " out of bounds for length " + this.tamanho);
         }
     }
 
     public void removeInicio() {
-        Funcionario auxiliar = primeiro;
+        Funcionario auxiliar = this.primeiro;
         primeiro = auxiliar.getProximo();
         auxiliar.setProximo(null);
 
-        if (tamanho > 1) {
-            primeiro.setAnterior(null);
+        if (this.tamanho > 1) {
+            this.primeiro.setAnterior(null);
         }
 
         tamanho--;
@@ -105,11 +101,11 @@ public class Lista {
     }
 
     public void removeFim() {
-        Funcionario auxiliar = ultimo;
+        Funcionario auxiliar = this.ultimo;
         ultimo = auxiliar.getAnterior();
         auxiliar.setAnterior(null);
-        ultimo.setProximo(null);
-        ultimo.setProximo(null);
+        this.ultimo.setProximo(null);
+        this.ultimo.setProximo(null);
 
         tamanho--;
 
@@ -126,8 +122,56 @@ public class Lista {
         tamanho--;
     }
 
+    public double getSomaSalarios() {
+        double soma = 0;
+        Funcionario auxiliar = this.primeiro;
+
+        while (auxiliar != null) {
+            soma += auxiliar.convertSalario();
+            auxiliar = auxiliar.getProximo();
+        }
+
+        return soma;
+    }
+
+    public double mediaSalarios(double somaSalarios) {
+        return somaSalarios / this.tamanho;
+    }
+
+    public Funcionario menorSalario() {
+        Funcionario funcMenorSalario = primeiro;
+
+        Funcionario funcMenorAux = funcMenorSalario.getProximo();
+
+        for (int i = 1; i < tamanho; i++) {
+            if (funcMenorSalario.convertSalario() > funcMenorAux.convertSalario()) {
+                funcMenorSalario = funcMenorAux;
+            }
+
+            funcMenorAux = funcMenorAux.getProximo();
+        }
+
+        return funcMenorSalario;
+    }
+
+    public Funcionario maiorSalario() {
+        Funcionario funcMaiorSalario = primeiro;
+
+        Funcionario funcMaiorAux = funcMaiorSalario.getProximo();
+
+        for (int i = 1; i < tamanho; i++) {
+            if (funcMaiorSalario.convertSalario() < funcMaiorAux.convertSalario()) {
+                funcMaiorSalario = funcMaiorAux;
+            }
+
+            funcMaiorAux = funcMaiorAux.getProximo();
+        }
+
+        return funcMaiorSalario;
+    }
+
     public void imprime() {
-        Funcionario aux = primeiro;
+        Funcionario aux = this.primeiro;
 
         while (aux != null) {
             System.out.println(aux);
@@ -136,7 +180,7 @@ public class Lista {
     }
 
     public void imprimeReverso() {
-        Funcionario aux = ultimo;
+        Funcionario aux = this.ultimo;
 
         while (aux != null) {
             System.out.println(aux);
@@ -144,8 +188,23 @@ public class Lista {
         }
     }
 
+    public void diferencaDataTodosFunc() {
+        Funcionario funcionario = this.primeiro;
+
+        for (int i = 0; i < this.tamanho; i++) {
+            LocalDate dataAtual = LocalDate.now();
+            String diferencaDataDias;
+
+            diferencaDataDias = funcionario.difDate(dataAtual);
+            System.out.println(funcionario + diferencaDataDias);
+
+            funcionario = funcionario.getProximo();
+        }
+    }
+
     public void ordenacaoPorCodigo() {
-        Funcionario atual = primeiro, index;
+        Funcionario atual = this.primeiro;
+        Funcionario index;
 
         Funcionario temp = new Funcionario();
 
@@ -165,7 +224,8 @@ public class Lista {
     }
 
     public void ordenacaoPorNome() {
-        Funcionario atual = primeiro, index;
+        Funcionario atual = this.primeiro;
+        Funcionario index;
 
         Funcionario temp = new Funcionario();
 
@@ -186,9 +246,10 @@ public class Lista {
     }
 
     public void gravaLista(String nomeArquivo) throws IOException {
-        Funcionario aux = primeiro;
+        Funcionario aux = this.primeiro;
         String dados;
         BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo));
+
         while (aux != null) {
             dados = Format.formatarParaEscrita(aux);
             buffWrite.append(dados).append("\n");
@@ -200,6 +261,7 @@ public class Lista {
     public void leArquivo(String nomeArquivo) throws IOException {
         BufferedReader buffRead = new BufferedReader(new FileReader(nomeArquivo));
         String linha;
+
         while (true) {
             linha = buffRead.readLine();
             if (linha != null) {

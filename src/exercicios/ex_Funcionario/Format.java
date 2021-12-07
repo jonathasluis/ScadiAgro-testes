@@ -3,12 +3,16 @@ package exercicios.ex_Funcionario;
 public class Format {
 
     public static String formatarParaEscrita(Funcionario func){
+        final int QUANTIDADE_CARACTERES_CODIGO = 6;
+        final int QUANTIDADE_CARACTERES_NOME = 100;
+        final int QUANTIDADE_CARACTERES_SALARIO = 13;
+
         String formatado = "";
 
         if (func != null) {
             // CODIGO
             String codigo = String.valueOf(func.getCodFuncionario());
-            int diferenca = 6 - codigo.length();
+            int diferenca = QUANTIDADE_CARACTERES_CODIGO - codigo.length();
             String complemento = "";
 
             for (int i = 0; i < diferenca; i++){
@@ -18,7 +22,7 @@ public class Format {
 
             // NOME
             String nome = func.getNomeFuncionario();
-            diferenca = 100 - nome.length();
+            diferenca = QUANTIDADE_CARACTERES_NOME - nome.length();
             complemento = "";
 
             for (int i = 0; i < diferenca; i++){
@@ -28,7 +32,7 @@ public class Format {
 
             // SALARIO
             String salario = func.getValorSalario();
-            diferenca = 13 - salario.split("\\.")[0].length();
+            diferenca = QUANTIDADE_CARACTERES_SALARIO - salario.split("\\.")[0].length();
             complemento = "";
 
             for (int i = 0; i < diferenca; i++){
