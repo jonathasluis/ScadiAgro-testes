@@ -188,6 +188,7 @@ public class Lista {
         }
     }
 
+
     public void diferencaDataTodosFunc() {
         Funcionario funcionario = this.primeiro;
 
@@ -245,10 +246,10 @@ public class Lista {
         }
     }
 
-    public void gravaLista(String nomeArquivo) throws IOException {
+    public void gravaLista(String nomeArquivo, boolean append) throws IOException {
         Funcionario aux = this.primeiro;
         String dados;
-        BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo));
+        BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo, append));
 
         while (aux != null) {
             dados = Format.formatarParaEscrita(aux);

@@ -2,7 +2,7 @@ package exercicios.ex_Funcionario;
 
 public class Format {
 
-    public static String formatarParaEscrita(Funcionario func){
+    public static String formatarParaEscrita(Funcionario func) {
         final int QUANTIDADE_CARACTERES_CODIGO = 6;
         final int QUANTIDADE_CARACTERES_NOME = 100;
         final int QUANTIDADE_CARACTERES_SALARIO = 13;
@@ -15,7 +15,7 @@ public class Format {
             int diferenca = QUANTIDADE_CARACTERES_CODIGO - codigo.length();
             String complemento = "";
 
-            for (int i = 0; i < diferenca; i++){
+            for (int i = 0; i < diferenca; i++) {
                 complemento = complemento.concat("0");
             }
             codigo = complemento + codigo;
@@ -25,7 +25,7 @@ public class Format {
             diferenca = QUANTIDADE_CARACTERES_NOME - nome.length();
             complemento = "";
 
-            for (int i = 0; i < diferenca; i++){
+            for (int i = 0; i < diferenca; i++) {
                 complemento = complemento.concat(" ");
             }
             nome += complemento;
@@ -35,7 +35,7 @@ public class Format {
             diferenca = QUANTIDADE_CARACTERES_SALARIO - salario.split("\\.")[0].length();
             complemento = "";
 
-            for (int i = 0; i < diferenca; i++){
+            for (int i = 0; i < diferenca; i++) {
                 complemento = complemento.concat("0");
             }
 
@@ -50,7 +50,7 @@ public class Format {
         return formatado;
     }
 
-    public static String[] formatarDaLeitura(String valor){
+    public static String[] formatarDaLeitura(String valor) {
         String[] formatado = new String[4];
         String[] split = valor.split("\\|");
 

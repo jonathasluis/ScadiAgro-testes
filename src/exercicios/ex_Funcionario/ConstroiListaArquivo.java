@@ -5,7 +5,7 @@ import java.io.IOException;
 public class ConstroiListaArquivo {
 
 
-    public static void main(String[] args) {
+    public static void select() {
         Lista listaNaoIndexada = new Lista();
         Lista listaIndexadaCod = new Lista();
         Lista listaIndexadaNome = new Lista();
@@ -44,5 +44,7 @@ public class ConstroiListaArquivo {
 
         System.out.println("\nLISTA INDEXADA NOME");
         listaIndexadaNome.imprime();
+
+        System.out.println("\n");
     }
 }

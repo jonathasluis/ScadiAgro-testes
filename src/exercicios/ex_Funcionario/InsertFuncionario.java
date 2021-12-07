@@ -5,10 +5,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Exercicio6_7 {
+public class InsertFuncionario {
 
-    public static void main(String[] args) {
-        Lista minhaLista = new Lista();
+    public static void insert() {
+        Lista minhaListaOriginal = new Lista();
         int quantidadeFunc;
 
         final String ARQUIVO_NAO_INDEXADO = "src/exercicios/ex_Funcionario/funcionario.dat";
@@ -44,56 +44,62 @@ public class Exercicio6_7 {
             String dataAux = input.nextLine();
             dataAdmissao = LocalDate.parse(dataAux, formatoData);
 
-            minhaLista.insereFim(codFuncionario, nomeFuncionario, valorSalario, dataAdmissao);
+            minhaListaOriginal.insereFim(codFuncionario, nomeFuncionario, valorSalario, dataAdmissao);
         }
 
         //TOTAL DE FUNCIONARIOS
-        quantidadeFunc = minhaLista.getTamanho();
+        quantidadeFunc = minhaListaOriginal.getTamanho();
         System.out.println("\nTotal de funcionarios: " + quantidadeFunc + "\n");
 
         //LISTA COMPLETA DE FUNCIONÁRIOS MOSTRANDO O TEMPO DE EMPRESA DE CADA UM DELES (NAO ORDENADO)
-        minhaLista.diferencaDataTodosFunc();
+        minhaListaOriginal.diferencaDataTodosFunc();
 
         //SOMA DOS SALARIO
-        double somaSalarios = minhaLista.getSomaSalarios();
+        double somaSalarios = minhaListaOriginal.getSomaSalarios();
         System.out.println("\nSoma dos salarios: R$" + somaSalarios);
 
         //MEDIA DOS SALARIO
-        System.out.println("\nMedia dos salarios: R$" + minhaLista.mediaSalarios(somaSalarios));
+        System.out.println("\nMedia dos salarios: R$" + minhaListaOriginal.mediaSalarios(somaSalarios));
 
         //DADOS DO MAIOR E DO MENOR SALARIO
-        System.out.println("\nMenor Salario: " + minhaLista.menorSalario().getValorSalario());
-        System.out.println("\nMaior Salario: " + minhaLista.maiorSalario().getValorSalario());
+        System.out.println("\nMenor Salario: " + minhaListaOriginal.menorSalario().getValorSalario());
+        System.out.println("\nMaior Salario: " + minhaListaOriginal.maiorSalario().getValorSalario());
 
         // GRAVA A LISTA NA ORDEM DE INSERCAO
+        Lista listaCompleta = new Lista();
         try {
-            minhaLista.gravaLista(ARQUIVO_NAO_INDEXADO);
+            minhaListaOriginal.gravaLista(ARQUIVO_NAO_INDEXADO, true);
+            listaCompleta.leArquivo(ARQUIVO_NAO_INDEXADO);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("\nLISTA NAO ORDENADA:");
-        minhaLista.imprime();
+        System.out.println("\nLISTA ORIGINAL NAO ORDENADA:");
+        minhaListaOriginal.imprime();
 
-        // ORDENACAO DA LISTA DUPLAMENTE ENCADEADA PELO CODIGO E GRAVACAO NO ARQUIVO
-        minhaLista.ordenacaoPorCodigo();
+        minhaListaOriginal.ordenacaoPorCodigo();
+        System.out.println("\nLISTA ORIGINAL ORDENADA POR CODIGO:");
+        minhaListaOriginal.imprime();
 
+        minhaListaOriginal.ordenacaoPorNome();
+        System.out.println("\nLISTA ORIGINAL ORDENADA POR NOME:");
+        minhaListaOriginal.imprime();
+
+        // ORDENACAO DA LISTA COMPLETA E GRAVACAO NO ARQUIVO
         try {
-            minhaLista.gravaLista(ARQUIVO_INDEXADO_CODIGO);
+            listaCompleta.ordenacaoPorCodigo();
+            listaCompleta.gravaLista(ARQUIVO_INDEXADO_CODIGO, false);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("\nLISTA ORDENADA POR CODIGO:");
-        minhaLista.imprime();
 
-        // ORDENACAO DA LISTA DUPLAMENTE ENCADEADA PELO NOME E GRAVACAO NO ARQUIVO
-        minhaLista.ordenacaoPorNome();
-
+        // ORDENACAO DA LISTA COMPLETA PELO NOME E GRAVACAO NO ARQUIVO
         try {
-            minhaLista.gravaLista(ARQUIVO_INDEXADO_NOME);
+            listaCompleta.ordenacaoPorNome();
+            listaCompleta.gravaLista(ARQUIVO_INDEXADO_NOME, false);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("\nLISTA ORDENADA POR NOME:");
-        minhaLista.imprime();
+
+        System.out.println("\n");
     }
 }
