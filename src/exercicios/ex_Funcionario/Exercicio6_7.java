@@ -5,11 +5,15 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Exercicio6 {
+public class Exercicio6_7 {
 
     public static void main(String[] args) {
         Lista minhaLista = new Lista();
         int quantidadeFunc;
+
+        final String ARQUIVO_NAO_INDEXADO = "src/exercicios/ex_Funcionario/funcionario.dat";
+        final String ARQUIVO_INDEXADO_CODIGO = "src/exercicios/ex_Funcionario/funcionario_idx01.idx";
+        final String ARQUIVO_INDEXADO_NOME = "src/exercicios/ex_Funcionario/funcionario_idx02.idx";
 
         while (true) {
             int codFuncionario;
@@ -99,7 +103,7 @@ public class Exercicio6 {
 
         // GRAVA A LISTA NA ORDEM DE INSERCAO
         try {
-            minhaLista.gravaLista("src/exercicios/ex_Funcionario/funcionario.dat");
+            minhaLista.gravaLista(ARQUIVO_NAO_INDEXADO);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -108,7 +112,7 @@ public class Exercicio6 {
         minhaLista.ordenacaoPorCodigo();
 
         try {
-            minhaLista.gravaLista("src/exercicios/ex_Funcionario/funcionario_idx01.idx");
+            minhaLista.gravaLista(ARQUIVO_INDEXADO_CODIGO);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -118,7 +122,7 @@ public class Exercicio6 {
         // ORDENACAO DA LISTA DUPLAMENTE ENCADEADA PELO NOME E GRAVACAO NO ARQUIVO
         minhaLista.ordenacaoPorNome();
         try {
-            minhaLista.gravaLista("src/exercicios/ex_Funcionario/funcionario_idx02.idx");
+            minhaLista.gravaLista(ARQUIVO_INDEXADO_NOME);
         } catch (IOException e) {
             e.printStackTrace();
         }

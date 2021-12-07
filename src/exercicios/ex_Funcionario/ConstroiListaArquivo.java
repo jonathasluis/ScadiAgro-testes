@@ -10,9 +10,13 @@ public class ConstroiListaArquivo {
         Lista listaIndexadaCod = new Lista();
         Lista listaIndexadaNome = new Lista();
 
+        final String ARQUIVO_NAO_INDEXADO = "src/exercicios/ex_Funcionario/funcionario.dat";
+        final String ARQUIVO_INDEXADO_CODIGO = "src/exercicios/ex_Funcionario/funcionario_idx01.idx";
+        final String ARQUIVO_INDEXADO_NOME = "src/exercicios/ex_Funcionario/funcionario_idx02.idx";
+
         //LISTA NAO INDEXADA
         try {
-            listaNaoIndexada.leArquivo("src/exercicios/ex_Funcionario/funcionario.dat");
+            listaNaoIndexada.leArquivo(ARQUIVO_NAO_INDEXADO);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -23,7 +27,7 @@ public class ConstroiListaArquivo {
 
         // LISTA INDEXADA POR CODIGO
         try {
-            listaIndexadaCod.leArquivo("src/exercicios/ex_Funcionario/funcionario_idx01.idx");
+            listaIndexadaCod.leArquivo(ARQUIVO_INDEXADO_CODIGO);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -33,7 +37,7 @@ public class ConstroiListaArquivo {
 
         // LISTA INDEXADA POR NOME
         try {
-            listaIndexadaNome.leArquivo("src/exercicios/ex_Funcionario/funcionario_idx02.idx");
+            listaIndexadaNome.leArquivo(ARQUIVO_INDEXADO_NOME);
         } catch (IOException e) {
             e.printStackTrace();
         }
