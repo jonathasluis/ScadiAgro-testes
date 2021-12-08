@@ -1,4 +1,6 @@
-package exercicios.ex_Funcionario;
+package exercicios.ex1_5;
+
+import exercicios.ex_Funcionario.Funcionario;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

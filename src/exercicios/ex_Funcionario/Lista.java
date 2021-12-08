@@ -37,13 +37,12 @@ public class Lista {
         tamanho++;
     }
 
-    public Funcionario buscarNaLista(int cod) {
+    public int buscarNaLista(int cod) {
         Funcionario auxiliar = this.primeiro;
         int posicao = 0;
 
         while (auxiliar != null) {
             if (auxiliar.getCodFuncionario() == cod) {
-                System.out.println(auxiliar + " " + posicao);
                 break;
             } else {
                 auxiliar = auxiliar.getProximo();
@@ -51,9 +50,9 @@ public class Lista {
             }
         }
         if (auxiliar == null) {
-            System.out.println("nao encontrado");
+            posicao = -1;
         }
-        return auxiliar;
+        return posicao;
     }
 
     public Funcionario acessarPosicao(int posicao) {
@@ -89,11 +88,14 @@ public class Lista {
         primeiro = auxiliar.getProximo();
         auxiliar.setProximo(null);
 
+
         if (this.tamanho > 1) {
             this.primeiro.setAnterior(null);
         }
 
         tamanho--;
+
+        System.out.println("Removido: " + auxiliar);
 
         if (vazia()) {
             ultimo = null;
@@ -109,6 +111,8 @@ public class Lista {
 
         tamanho--;
 
+        System.out.println("Removido: " + auxiliar);
+
         if (vazia()) {
             ultimo = null;
         }
@@ -120,6 +124,7 @@ public class Lista {
         auxiliar.getAnterior().setProximo(auxiliar.getProximo());
 
         tamanho--;
+        System.out.println("Removido: " + auxiliar);
     }
 
     public double getSomaSalarios() {
@@ -188,7 +193,6 @@ public class Lista {
         }
     }
 
-
     public void diferencaDataTodosFunc() {
         Funcionario funcionario = this.primeiro;
 
@@ -214,9 +218,15 @@ public class Lista {
 
             while (index != null) {
                 if (atual.getCodFuncionario() > index.getCodFuncionario()) {
-                    temp.replace(atual);
-                    atual.replace(index);
-                    index.replace(temp);
+
+                    temp.replace(atual.getCodFuncionario(), atual.getNomeFuncionario(),
+                            atual.getDataAdmissao(), atual.getValorSalario());
+
+                    atual.replace(index.getCodFuncionario(), index.getNomeFuncionario(),
+                            index.getDataAdmissao(), index.getValorSalario());
+
+                    index.replace(temp.getCodFuncionario(), temp.getNomeFuncionario(),
+                            temp.getDataAdmissao(), temp.getValorSalario());
                 }
                 index = index.getProximo();
             }
@@ -236,9 +246,14 @@ public class Lista {
             while (index != null) {
 
                 if (atual.getNomeFuncionario().compareToIgnoreCase(index.getNomeFuncionario()) > 0) {
-                    temp.replace(atual);
-                    atual.replace(index);
-                    index.replace(temp);
+                    temp.replace(atual.getCodFuncionario(), atual.getNomeFuncionario(),
+                            atual.getDataAdmissao(), atual.getValorSalario());
+
+                    atual.replace(index.getCodFuncionario(), index.getNomeFuncionario(),
+                            index.getDataAdmissao(), index.getValorSalario());
+
+                    index.replace(temp.getCodFuncionario(), temp.getNomeFuncionario(),
+                            temp.getDataAdmissao(), temp.getValorSalario());
                 }
                 index = index.getProximo();
             }
@@ -246,10 +261,10 @@ public class Lista {
         }
     }
 
-    public void gravaLista(String nomeArquivo, boolean append) throws IOException {
+    public void gravaLista(String nomeArquivo) throws IOException {
         Funcionario aux = this.primeiro;
         String dados;
-        BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo, append));
+        BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo));
 
         while (aux != null) {
             dados = Format.formatarParaEscrita(aux);

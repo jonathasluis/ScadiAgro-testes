@@ -1,6 +1,6 @@
 package exercicios.ex_Funcionario;
 
-public class Format {
+public class Format { // Formata  para a escrita e para a leitura do arquivo
 
     public static String formatarParaEscrita(Funcionario func) {
         final int QUANTIDADE_CARACTERES_CODIGO = 6;

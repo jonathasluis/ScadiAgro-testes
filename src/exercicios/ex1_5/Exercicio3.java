@@ -1,4 +1,4 @@
-package exercicios;
+package exercicios.ex1_5;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

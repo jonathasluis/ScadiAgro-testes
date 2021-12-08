@@ -108,11 +108,11 @@ public class Funcionario {
         this.dataAdmissao = dataAdmissao;
     }
 
-    public void replace(Funcionario func) {
-        this.setCodFuncionario(func.getCodFuncionario());
-        this.setNomeFuncionario(func.getNomeFuncionario());
-        this.setDataAdmissao(func.getDataAdmissao());
-        this.setValorSalario(func.getValorSalario());
+    public void replace(int codigo, String nome, LocalDate data, String salario) {
+        this.setCodFuncionario(codigo);
+        this.setNomeFuncionario(nome);
+        this.setDataAdmissao(data);
+        this.setValorSalario(salario);
     }
 }
 
