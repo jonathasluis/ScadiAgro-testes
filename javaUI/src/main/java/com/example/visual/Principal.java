@@ -55,7 +55,7 @@ public class Principal extends Application {
             }
             case 3 -> {
                 stage.setScene(visualUpdate);
-                stage.setTitle("Update");
+                stage.setTitle("Updat");
             }
             case 4 -> {
                 stage.setScene(visualSelect);

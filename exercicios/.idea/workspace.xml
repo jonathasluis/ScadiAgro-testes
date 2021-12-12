@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea39067c-334d-4b93-8f3e-da9d2d16628a" name="Changes" comment="organização de arquivos&#10;&#10;-mudança de pasta dos arquivos, os exercicios de 1 a 7 foram movidos para a pasta &quot;exercicios&quot;" />
+    <list default="true" id="ea39067c-334d-4b93-8f3e-da9d2d16628a" name="Changes" comment="organização de arquivos&#10;&#10;-mudança de pasta dos arquivos, os exercicios de 1 a 7 foram movidos para a pasta &quot;exercicios&quot;">
+      <change beforePath="$PROJECT_DIR$/../javaUI" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javaUI" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -145,7 +147,7 @@
       <workItem from="1639061589246" duration="183000" />
       <workItem from="1639135174725" duration="808000" />
       <workItem from="1639136037449" duration="903000" />
-      <workItem from="1639338407310" duration="545000" />
+      <workItem from="1639338407310" duration="676000" />
     </task>
     <task id="LOCAL-00001" summary="inicial">
       <created>1638211452184</created>
@@ -273,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639338631244</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="organização de arquivos&#10;&#10;-mudança de pasta dos arquivos, os exercicios de 1 a 7 foram movidos para a pasta &quot;exercicios&quot;">
+      <created>1639338998616</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1639338998616</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
