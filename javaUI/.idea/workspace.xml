@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="commit teste">
-      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/Dados.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/Format.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/Funcionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" afterDir="false" />
+    <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="Insert&#10;&#10;- implementção da inserçao de funcionarios&#10;- substituição da lista &quot;manual&quot; por uma lista da Collenctions&#10;- adaptação dos metodos para a classe List">
       <change beforePath="$PROJECT_DIR$/../exercicios/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exercicios/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/PrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/principal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/Principal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/insert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +105,7 @@
       <workItem from="1639173460183" duration="1236000" />
       <workItem from="1639339097107" duration="433000" />
       <workItem from="1639339741343" duration="458000" />
-      <workItem from="1639393195421" duration="15344000" />
+      <workItem from="1639393195421" duration="15958000" />
     </task>
     <task id="LOCAL-00001" summary="Primeiro commit&#10;&#10;- criaçao da tela inicial&#10;- ciacao da tela de insercao">
       <created>1639174313397</created>
@@ -145,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639339954837</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Insert&#10;&#10;- implementção da inserçao de funcionarios&#10;- substituição da lista &quot;manual&quot; por uma lista da Collenctions&#10;- adaptação dos metodos para a classe List">
+      <created>1639424618860</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639424618860</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +173,8 @@
     <MESSAGE value="Primeiro commit&#10;&#10;- criaçao da tela inicial&#10;- ciacao da tela de insercao" />
     <MESSAGE value="atualização workspace.xml" />
     <MESSAGE value="commit teste" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit teste" />
+    <MESSAGE value="Insert&#10;&#10;- implementção da inserçao de funcionarios&#10;- substituição da lista &quot;manual&quot; por uma lista da Collenctions&#10;- adaptação dos metodos para a classe List" />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert&#10;&#10;- implementção da inserçao de funcionarios&#10;- substituição da lista &quot;manual&quot; por uma lista da Collenctions&#10;- adaptação dos metodos para a classe List" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
