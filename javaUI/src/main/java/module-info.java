@@ -5,4 +5,6 @@ module com.example.teste {
 
     opens com.example.visual to javafx.fxml;
     exports com.example.visual;
+    exports backEnd;
+    opens backEnd to javafx.fxml;
 }
