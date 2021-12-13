@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea39067c-334d-4b93-8f3e-da9d2d16628a" name="Changes" comment="organização de arquivos&#10;&#10;-mudança de pasta dos arquivos, os exercicios de 1 a 7 foram movidos para a pasta &quot;exercicios&quot;">
-      <change beforePath="$PROJECT_DIR$/../javaUI" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../javaUI/src/main/java/backEnd/Dados.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../javaUI/src/main/java/backEnd/Format.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../javaUI/src/main/java/backEnd/Funcionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../javaUI/src/main/java/backEnd/Lista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/src/main/java/com/example/visual/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/src/main/java/com/example/visual/InsertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/src/main/java/com/example/visual/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/src/main/java/com/example/visual/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/src/main/java/com/example/visual/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/src/main/java/com/example/visual/PrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/src/main/resources/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/src/main/resources/com/example/visual/insert.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/src/main/resources/com/example/visual/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/src/main/resources/com/example/visual/principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/InsertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/InsertController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/PrincipalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/insert.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../javaUI/target/classes/com/example/visual/principal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +163,7 @@
       <workItem from="1639135174725" duration="808000" />
       <workItem from="1639136037449" duration="903000" />
       <workItem from="1639338407310" duration="676000" />
+      <workItem from="1639405371654" duration="569000" />
     </task>
     <task id="LOCAL-00001" summary="inicial">
       <created>1638211452184</created>
