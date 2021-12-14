@@ -1,7 +1,6 @@
 package com.example.visual;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -18,7 +17,7 @@ public class PrincipalController {
 
     public void switchToInsert(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("insert.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -26,7 +25,15 @@ public class PrincipalController {
 
     public void switchToUpdate(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("update.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToSelect(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("select.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
