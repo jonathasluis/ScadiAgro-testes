@@ -4,10 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="Insert&#10;&#10;- implementção da inserçao de funcionarios&#10;- substituição da lista &quot;manual&quot; por uma lista da Collenctions&#10;- adaptação dos metodos para a classe List">
-      <change beforePath="$PROJECT_DIR$/../exercicios/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exercicios/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="Commit 14/12&#10;&#10;- Criação da classe &quot;Auxiliar&quot; para verificar campos e montar tabela;&#10;- Classe &quot;InsertController&quot; e &quot;UpdateController&quot; adaptadas para utilizar a classe &quot;Auxiliar&quot;;&#10;- Implementação da alteração e exclusao de dados na classe &quot;UpdateController&quot;;&#10;- Janela Select implementada;&#10;- Classe &quot;SelectController&quot; (visualiza os dados) e pode excluir todos os registros;&#10;- Classe &quot;Funcionario&quot; adaptada para colocar dados na tabela (variavel tempoEmpresa);">
+      <change afterPath="$PROJECT_DIR$/../.idea/ScadiAgro.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_23_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Auxiliar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCADI_java_UI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SCADI_java_UI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/SelectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/SelectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/UpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/select.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/select.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/SelectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/SelectController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/UpdateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/UpdateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/insert.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/select.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/select.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/update.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +63,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="16" />
     <property name="last.edited.regexp" value="23/13/1999" />
@@ -105,7 +127,8 @@
       <workItem from="1639173460183" duration="1236000" />
       <workItem from="1639339097107" duration="433000" />
       <workItem from="1639339741343" duration="458000" />
-      <workItem from="1639393195421" duration="15958000" />
+      <workItem from="1639393195421" duration="16229000" />
+      <workItem from="1639479535899" duration="13609000" />
     </task>
     <task id="LOCAL-00001" summary="Primeiro commit&#10;&#10;- criaçao da tela inicial&#10;- ciacao da tela de insercao">
       <created>1639174313397</created>
@@ -135,7 +158,28 @@
       <option name="project" value="LOCAL" />
       <updated>1639424618860</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update&#10;&#10;- implementção da janela update de funcionarios">
+      <created>1639424847361</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639424847361</updated>
+    </task>
+    <task id="LOCAL-00006" summary=".">
+      <created>1639424903889</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639424903889</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Navegação Principal&#10;&#10;-implementação do metodo para navegar para as outras janelas">
+      <created>1639480851458</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639480851458</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +218,11 @@
     <MESSAGE value="atualização workspace.xml" />
     <MESSAGE value="commit teste" />
     <MESSAGE value="Insert&#10;&#10;- implementção da inserçao de funcionarios&#10;- substituição da lista &quot;manual&quot; por uma lista da Collenctions&#10;- adaptação dos metodos para a classe List" />
-    <option name="LAST_COMMIT_MESSAGE" value="Insert&#10;&#10;- implementção da inserçao de funcionarios&#10;- substituição da lista &quot;manual&quot; por uma lista da Collenctions&#10;- adaptação dos metodos para a classe List" />
+    <MESSAGE value="Update&#10;&#10;- implementção da janela update de funcionarios" />
+    <MESSAGE value="." />
+    <MESSAGE value="Navegação Principal&#10;&#10;-implementação do metodo para navegar para as outras janelas" />
+    <MESSAGE value="Commit 14/12&#10;&#10;- Criação da classe &quot;Auxiliar&quot; para verificar campos e montar tabela;&#10;- Classe &quot;InsertController&quot; e &quot;UpdateController&quot; adaptadas para utilizar a classe &quot;Auxiliar&quot;;&#10;- Implementação da alteração e exclusao de dados na classe &quot;UpdateController&quot;;&#10;- Janela Select implementada;&#10;- Classe &quot;SelectController&quot; (visualiza os dados) e pode excluir todos os registros;&#10;- Classe &quot;Funcionario&quot; adaptada para colocar dados na tabela (variavel tempoEmpresa);" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 14/12&#10;&#10;- Criação da classe &quot;Auxiliar&quot; para verificar campos e montar tabela;&#10;- Classe &quot;InsertController&quot; e &quot;UpdateController&quot; adaptadas para utilizar a classe &quot;Auxiliar&quot;;&#10;- Implementação da alteração e exclusao de dados na classe &quot;UpdateController&quot;;&#10;- Janela Select implementada;&#10;- Classe &quot;SelectController&quot; (visualiza os dados) e pode excluir todos os registros;&#10;- Classe &quot;Funcionario&quot; adaptada para colocar dados na tabela (variavel tempoEmpresa);" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

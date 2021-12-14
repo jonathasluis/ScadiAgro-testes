@@ -1,7 +1,6 @@
 package backEnd;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class Funcionario {
@@ -10,7 +9,7 @@ public class Funcionario {
     private String nomeFuncionario;
     private String valorSalario;
     private LocalDate dataAdmissao;
-
+    private String tempoEmpresa;
 
     public Funcionario(int codFunc, String nome, String salario, LocalDate admissao) {
         this.codFuncionario = codFunc;
@@ -24,6 +23,7 @@ public class Funcionario {
 
         this.valorSalario = salario;
         this.dataAdmissao = admissao;
+        this.tempoEmpresa = null;
 
     }
 
@@ -41,16 +41,16 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         return this.codFuncionario + " - " + this.nomeFuncionario + " - R$" +
-                this.valorSalario + " - " + this.dataAdmissao.format(formatoData);
+                this.valorSalario;
     }
 
-    public String difDate(LocalDate atual) {
+    public void difDate() {
+        LocalDate atual = LocalDate.now();
         long diferencaEmDias = ChronoUnit.DAYS.between(getDataAdmissao(), atual);
 
-        return  diferencaEmDias + " dias";
+        this.setTempoEmpresa(diferencaEmDias + " dias");
     }
 
     public void setCodFuncionario(int codFuncionario) {
@@ -84,6 +84,14 @@ public class Funcionario {
 
     public void setDataAdmissao(LocalDate dataAdmissao) {
         this.dataAdmissao = dataAdmissao;
+    }
+
+    public String getTempoEmpresa() {
+        return tempoEmpresa;
+    }
+
+    public void setTempoEmpresa(String tempoEmpresa) {
+        this.tempoEmpresa = tempoEmpresa;
     }
 
     public void replace(int codigo, String nome, LocalDate data, String salario) {

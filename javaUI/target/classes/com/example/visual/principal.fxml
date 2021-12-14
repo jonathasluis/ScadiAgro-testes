@@ -11,7 +11,7 @@
         <children>
             <Button fx:id="btnInsert" layoutX="57.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToInsert" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 100;" text="Insert" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="150.0" />
             <Button fx:id="btnUpdate" layoutX="250.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToUpdate" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 100;" text="Update" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="150.0" />
-            <Button fx:id="btnSelect" layoutX="442.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 100;" text="Select" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="150.0" />
+            <Button fx:id="btnSelect" layoutX="442.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToSelect" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 100;" text="Select" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="150.0" />
             <Label fx:id="label" layoutX="164.0" layoutY="65.0" text="Controle de Funcionarios">
                 <font>
                     <Font name="Times New Roman Bold" size="25.0" />

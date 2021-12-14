@@ -6,26 +6,22 @@ import java.util.List;
 
 public class ListOptions {
 
-    public static boolean contem(List<Funcionario> lista, int codigo) {
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getCodFuncionario() == codigo) {
-                return true;
+    public static Funcionario contem(List<Funcionario> lista, int codigo) {
+        for (Funcionario aux : lista) {
+            if (aux.getCodFuncionario() == codigo) {
+                return aux;
             }
         }
-        return false;
+        return null;
     }
 
     public static double getSomaSalarios(List<Funcionario> lista) {
         double soma = 0d;
 
-        for (int i = 0; i < lista.size(); i++) {
-            soma += lista.get(i).convertSalario();
+        for (Funcionario funcionario : lista) {
+            soma += funcionario.convertSalario();
         }
         return soma;
-    }
-
-    public static double mediaSalarios(double somaSalarios, List<Funcionario> lista) {
-        return somaSalarios / lista.size();
     }
 
     public static Funcionario menorSalario(List<Funcionario> lista) {
@@ -55,8 +51,8 @@ public class ListOptions {
         String dados;
         BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo));
 
-        for (int i = 0; i < lista.size(); i++) {
-            dados = Format.formatarParaEscrita(lista.get(i));
+        for (Funcionario funcionario : lista) {
+            dados = Format.formatarParaEscrita(funcionario);
             buffWrite.append(dados).append("\n");
         }
         buffWrite.close();
