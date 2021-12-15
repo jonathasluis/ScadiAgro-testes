@@ -94,12 +94,6 @@ public class Funcionario {
         this.tempoEmpresa = tempoEmpresa;
     }
 
-    public void replace(int codigo, String nome, LocalDate data, String salario) {
-        this.setCodFuncionario(codigo);
-        this.setNomeFuncionario(nome);
-        this.setDataAdmissao(data);
-        this.setValorSalario(salario);
-    }
 }
 
 

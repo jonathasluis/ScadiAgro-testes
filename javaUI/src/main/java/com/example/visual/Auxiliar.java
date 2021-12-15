@@ -11,39 +11,42 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.time.LocalDate;
 import java.util.List;
 
+/*
+ * classe auxiliar para a verificaçao de campos e criaçao das tabelas
+ */
 public class Auxiliar {
-    //classe auxiliar para a verificaçao de campos e criaçao de tabelas
 
-    public static boolean verificaCampos(TextField txtCodigo, TextField txtNome, TextField txtSalario, TextField txtData,
-                                   List<Funcionario> lista, String classe) {
+    public static boolean verificaCampos(TextField tfCodigo, TextField tfNome, TextField tfSalario, TextField tfData,
+                                         List<Funcionario> lista, String classe) {
 
-        if (!txtCodigo.getText().trim().matches("^\\d*[0-9]$") || txtCodigo.getText().equals("0")) {
+        if (!tfCodigo.getText().trim().matches("^\\d*[0-9]$") || tfCodigo.getText().equals("0")) {
             alerta("Codigo Invalido!");
-            txtCodigo.requestFocus();
+            tfCodigo.requestFocus();
             return false;
         }
 
-        if (txtNome.getText().trim().equals("")) {
+        if (tfNome.getText().trim().equals("")) {
             alerta("Nome Invalido!");
-            txtNome.requestFocus();
+            tfNome.requestFocus();
             return false;
         }
 
-        if (!txtSalario.getText().trim().matches("^\\d*[0-9](,|.\\d*[0-9])?$")) {
+        if (!tfSalario.getText().trim().matches("^\\d*[0-9](,|.\\d*[0-9])?$")) {
             alerta("Salario Invalido!");
-            txtSalario.requestFocus();
+            tfSalario.requestFocus();
             return false;
         }
 
-        if (!txtData.getText().trim().matches("^(0[1-9]|[1,2][0-9]|3[0,1])/(0[1-9]|1[0-2])/\\d{4}$")) {
+        if (!tfData.getText().trim().matches("^(0[1-9]|[1,2][0-9]|3[0,1])/(0[1-9]|1[0-2])/\\d{4}$")) {
             alerta("Data Invalida!");
-            txtData.requestFocus();
+            tfData.requestFocus();
             return false;
         }
 
-        if (ListOptions.contem(lista, Integer.parseInt(txtCodigo.getText())) != null && classe.equals("insert")) {
+        // Se for a classe InsertController faz a verificação
+        if (ListOptions.buscaCod(lista, Integer.parseInt(tfCodigo.getText())) != null && classe.equals("insert")) {
             alerta("Ja existe esse codigo!");
-            txtCodigo.requestFocus();
+            tfCodigo.requestFocus();
             return false;
         }
 
@@ -57,9 +60,12 @@ public class Auxiliar {
         alert.show();
     }
 
+    /*
+     * Monta as tabelas do Insert e Update, SEM a coluna tempo de empresa (columnDifData).
+     */
     static void montaTabela(TableView<Funcionario> tableFuncionario, TableColumn<Funcionario, Integer> columnCod,
-                             TableColumn<Funcionario, String> columnNome, TableColumn<Funcionario, String> columnSalario,
-                             TableColumn<Funcionario, LocalDate> columnData,List<Funcionario> lista) {
+                            TableColumn<Funcionario, String> columnNome, TableColumn<Funcionario, String> columnSalario,
+                            TableColumn<Funcionario, LocalDate> columnData, List<Funcionario> lista) {
 
         columnCod.setCellValueFactory(new PropertyValueFactory<>("codFuncionario"));
         columnNome.setCellValueFactory(new PropertyValueFactory<>("nomeFuncionario"));
@@ -69,6 +75,9 @@ public class Auxiliar {
         tableFuncionario.getItems().setAll(lista);
     }
 
+    /*
+     * Monta as tabelas do Select, COM a coluna tempo de empresa (columnDifData).
+     */
     static void montaTabela(TableView<Funcionario> tableFuncionario, TableColumn<Funcionario, Integer> columnCod,
                             TableColumn<Funcionario, String> columnNome, TableColumn<Funcionario, String> columnSalario,
                             TableColumn<Funcionario, LocalDate> columnData, TableColumn<Funcionario, String> columnDifData,
@@ -79,6 +88,7 @@ public class Auxiliar {
         columnSalario.setCellValueFactory(new PropertyValueFactory<>("valorSalario"));
         columnData.setCellValueFactory(new PropertyValueFactory<>("dataAdmissao"));
         columnDifData.setCellValueFactory(new PropertyValueFactory<>("tempoEmpresa"));
+
         tableFuncionario.getItems().setAll(lista);
     }
 }

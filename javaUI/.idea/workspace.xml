@@ -4,24 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="Commit 14/12&#10;&#10;- Criação da classe &quot;Auxiliar&quot; para verificar campos e montar tabela;&#10;- Classe &quot;InsertController&quot; e &quot;UpdateController&quot; adaptadas para utilizar a classe &quot;Auxiliar&quot;;&#10;- Implementação da alteração e exclusao de dados na classe &quot;UpdateController&quot;;&#10;- Janela Select implementada;&#10;- Classe &quot;SelectController&quot; (visualiza os dados) e pode excluir todos os registros;&#10;- Classe &quot;Funcionario&quot; adaptada para colocar dados na tabela (variavel tempoEmpresa);">
-      <change afterPath="$PROJECT_DIR$/../.idea/ScadiAgro.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_23_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Auxiliar.java" afterDir="false" />
+    <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="Commit 15/12 - final&#10;&#10;- Criação das classes CompareCodigo e CompareNome para utilizar a ordenação da lista;&#10;- Refatoração de todas as classes;&#10;- Implementação da ordenação por codigo e nome nas classes Dados e SelectController;&#10;- Implemetação de salvar arquivos indexados nas classes InsertController, UpdateController e SelectController;&#10;- ComboBox para selecionar o modo de ordenação na tabela em Select">
+      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/compare/CompareCodigo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/compare/CompareNome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCADI_java_UI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SCADI_java_UI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Dados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Dados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Format.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Funcionario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/Auxiliar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Auxiliar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/PrincipalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/SelectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/SelectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/UpdateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/principal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/select.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/select.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/Principal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/SelectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/SelectController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/UpdateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/UpdateController.class" afterDir="false" />
@@ -128,7 +128,8 @@
       <workItem from="1639339097107" duration="433000" />
       <workItem from="1639339741343" duration="458000" />
       <workItem from="1639393195421" duration="16229000" />
-      <workItem from="1639479535899" duration="13609000" />
+      <workItem from="1639479535899" duration="13728000" />
+      <workItem from="1639565651222" duration="13187000" />
     </task>
     <task id="LOCAL-00001" summary="Primeiro commit&#10;&#10;- criaçao da tela inicial&#10;- ciacao da tela de insercao">
       <created>1639174313397</created>
@@ -179,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639480851458</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Commit 14/12&#10;&#10;- Criação da classe &quot;Auxiliar&quot; para verificar campos e montar tabela;&#10;- Classe &quot;InsertController&quot; e &quot;UpdateController&quot; adaptadas para utilizar a classe &quot;Auxiliar&quot;;&#10;- Implementação da alteração e exclusao de dados na classe &quot;UpdateController&quot;;&#10;- Janela Select implementada;&#10;- Classe &quot;SelectController&quot; (visualiza os dados) e pode excluir todos os registros;&#10;- Classe &quot;Funcionario&quot; adaptada para colocar dados na tabela (variavel tempoEmpresa);">
+      <created>1639494098531</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639494098531</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,19 +198,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Paths">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dir:D:/Users/jonat/Documents/programacao/java/ScadiAgro/javaUi" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -222,7 +233,8 @@
     <MESSAGE value="." />
     <MESSAGE value="Navegação Principal&#10;&#10;-implementação do metodo para navegar para as outras janelas" />
     <MESSAGE value="Commit 14/12&#10;&#10;- Criação da classe &quot;Auxiliar&quot; para verificar campos e montar tabela;&#10;- Classe &quot;InsertController&quot; e &quot;UpdateController&quot; adaptadas para utilizar a classe &quot;Auxiliar&quot;;&#10;- Implementação da alteração e exclusao de dados na classe &quot;UpdateController&quot;;&#10;- Janela Select implementada;&#10;- Classe &quot;SelectController&quot; (visualiza os dados) e pode excluir todos os registros;&#10;- Classe &quot;Funcionario&quot; adaptada para colocar dados na tabela (variavel tempoEmpresa);" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 14/12&#10;&#10;- Criação da classe &quot;Auxiliar&quot; para verificar campos e montar tabela;&#10;- Classe &quot;InsertController&quot; e &quot;UpdateController&quot; adaptadas para utilizar a classe &quot;Auxiliar&quot;;&#10;- Implementação da alteração e exclusao de dados na classe &quot;UpdateController&quot;;&#10;- Janela Select implementada;&#10;- Classe &quot;SelectController&quot; (visualiza os dados) e pode excluir todos os registros;&#10;- Classe &quot;Funcionario&quot; adaptada para colocar dados na tabela (variavel tempoEmpresa);" />
+    <MESSAGE value="Commit 15/12 - final&#10;&#10;- Criação das classes CompareCodigo e CompareNome para utilizar a ordenação da lista;&#10;- Refatoração de todas as classes;&#10;- Implementação da ordenação por codigo e nome nas classes Dados e SelectController;&#10;- Implemetação de salvar arquivos indexados nas classes InsertController, UpdateController e SelectController;&#10;- ComboBox para selecionar o modo de ordenação na tabela em Select" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 15/12 - final&#10;&#10;- Criação das classes CompareCodigo e CompareNome para utilizar a ordenação da lista;&#10;- Refatoração de todas as classes;&#10;- Implementação da ordenação por codigo e nome nas classes Dados e SelectController;&#10;- Implemetação de salvar arquivos indexados nas classes InsertController, UpdateController e SelectController;&#10;- ComboBox para selecionar o modo de ordenação na tabela em Select" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,7 +1,13 @@
 package backEnd;
 
-public class Format { // Formata  para a escrita e para a leitura do arquivo
+/*
+ * Formata  para a escrita e para a leitura do arquivo
+ */
+public class Format {
 
+    /*
+     * Formata  para a escrita no arquivo
+     */
     public static String formatarParaEscrita(Funcionario func) {
         final int QUANTIDADE_CARACTERES_CODIGO = 6;
         final int QUANTIDADE_CARACTERES_NOME = 100;
@@ -50,6 +56,9 @@ public class Format { // Formata  para a escrita e para a leitura do arquivo
         return formatado;
     }
 
+    /*
+     * Formata para a recuperação de dados dos arquivos
+     */
     public static String[] formatarDaLeitura(String valor) {
         String[] formatado = new String[4];
         String[] split = valor.split("\\|");

@@ -4,9 +4,15 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.List;
 
+/*
+ * Classe com as operações feitas com as listas
+ */
 public class ListOptions {
 
-    public static Funcionario contem(List<Funcionario> lista, int codigo) {
+    /*
+     * Verifica se possui o codigo na lista, se possuir, retorna o objeto que o contem
+     */
+    public static Funcionario buscaCod(List<Funcionario> lista, int codigo) {
         for (Funcionario aux : lista) {
             if (aux.getCodFuncionario() == codigo) {
                 return aux;
@@ -15,6 +21,9 @@ public class ListOptions {
         return null;
     }
 
+    /*
+     * Retorna a soma dos salarios na lista
+     */
     public static double getSomaSalarios(List<Funcionario> lista) {
         double soma = 0d;
 
@@ -24,29 +33,42 @@ public class ListOptions {
         return soma;
     }
 
+    /*
+     * Retorna o funcionario com o menor salario
+     */
+
     public static Funcionario menorSalario(List<Funcionario> lista) {
         Funcionario funcMenorSalario = lista.get(0);
+        Funcionario aux;
 
         for (int i = 1; i < lista.size(); i++) {
-            if (funcMenorSalario.convertSalario() > lista.get(i).convertSalario()) {
-                funcMenorSalario = lista.get(i);
+            aux = lista.get(i);
+            if (funcMenorSalario.convertSalario() > aux.convertSalario()) {
+                funcMenorSalario = aux;
             }
         }
-
         return funcMenorSalario;
     }
 
+    /*
+     * Retorna o funcionario com o maior salario
+     */
     public static Funcionario maiorSalario(List<Funcionario> lista) {
         Funcionario funcMaiorSalario = lista.get(0);
+        Funcionario aux;
 
         for (int i = 1; i < lista.size(); i++) {
-            if (funcMaiorSalario.convertSalario() < lista.get(i).convertSalario()) {
-                funcMaiorSalario = lista.get(i);
+            aux = lista.get(i);
+            if (funcMaiorSalario.convertSalario() < aux.convertSalario()) {
+                funcMaiorSalario = aux;
             }
         }
         return funcMaiorSalario;
     }
 
+    /*
+     * Grava a lista no arquivo
+     */
     public static void gravaLista(String nomeArquivo, List<Funcionario> lista) throws IOException {
         String dados;
         BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo));
@@ -58,6 +80,9 @@ public class ListOptions {
         buffWrite.close();
     }
 
+    /*
+     * Lê arquivo e controi lista
+     */
     public static void leArquivo(String nomeArquivo, List<Funcionario> lista) throws IOException {
         BufferedReader buffRead = new BufferedReader(new FileReader(nomeArquivo));
         String linha;
@@ -73,8 +98,9 @@ public class ListOptions {
                 LocalDate data = LocalDate.parse(formatado[3]);
 
                 lista.add(new Funcionario(codigo, nome, salario, data));
-            } else
+            } else {
                 break;
+            }
         }
         buffRead.close();
     }

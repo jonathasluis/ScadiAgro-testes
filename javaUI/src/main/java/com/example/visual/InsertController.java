@@ -19,25 +19,24 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class InsertController implements Initializable {
 
-    private final List<Funcionario> lista = new LinkedList<>();
+    private final LinkedList<Funcionario> listaNaoIndexada = new LinkedList<>();
 
     @FXML
-    private TextField txtNome;
+    private TextField tfNome;
 
     @FXML
-    private TextField txtSalario;
+    private TextField tfSalario;
 
     @FXML
-    private TextField txtData;
+    private TextField tfData;
 
     @FXML
-    private TextField txtCodigo;
+    private TextField tfCodigo;
 
     @FXML
     private TableView<Funcionario> tableFuncionario;
@@ -50,44 +49,49 @@ public class InsertController implements Initializable {
     @FXML
     private TableColumn<Funcionario, LocalDate> columnData;
 
+    /*
+     * Inicializa a tela com a tabela preenchida
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Dados.recupera(lista);
-        Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario, columnData, lista);
+        Dados.recupera(listaNaoIndexada);
+        Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario, columnData, listaNaoIndexada);
     }
 
     @FXML
     private void voltar(ActionEvent event) throws IOException {
-        Dados.salvar(lista);
+        Dados.salvar(listaNaoIndexada);
         switchToPrincipal(event);
     }
 
     @FXML
     private void limpar() {
-        txtNome.setText("");
-        txtSalario.setText("");
-        txtCodigo.setText("");
-        txtData.setText("");
+        tfNome.setText("");
+        tfSalario.setText("");
+        tfCodigo.setText("");
+        tfData.setText("");
     }
 
     @FXML
     private void adicionar() {
 
-        if (Auxiliar.verificaCampos(txtCodigo, txtNome, txtSalario, txtData, lista, "insert")) {
+        if (Auxiliar.verificaCampos(tfCodigo, tfNome, tfSalario, tfData, listaNaoIndexada, "insert")) {
             DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-            int codigo = Integer.parseInt(txtCodigo.getText());
-            String nome = txtNome.getText();
-            String salario = txtSalario.getText();
-            LocalDate data = LocalDate.parse(txtData.getText(), formatoData);
+            int codigo = Integer.parseInt(tfCodigo.getText());
+            String nome = tfNome.getText();
+            String salario = tfSalario.getText();
+            LocalDate data = LocalDate.parse(tfData.getText(), formatoData);
 
-            lista.add(new Funcionario(codigo, nome, salario, data));
-            Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario, columnData, lista);
+            listaNaoIndexada.add(new Funcionario(codigo, nome, salario, data));
+            Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario, columnData, listaNaoIndexada);
             limpar();
         }
     }
 
-
+    /*
+     * Carrega a tela inicial
+     */
     public void switchToPrincipal(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("principal.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

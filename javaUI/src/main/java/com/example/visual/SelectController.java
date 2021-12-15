@@ -3,6 +3,8 @@ package com.example.visual;
 import backEnd.Dados;
 import backEnd.Funcionario;
 import backEnd.ListOptions;
+import backEnd.compare.CompareCodigo;
+import backEnd.compare.CompareNome;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,11 +18,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.ResourceBundle;
 
 public class SelectController implements Initializable {
 
-    private final List<Funcionario> lista = new LinkedList<>();
+    private final LinkedList<Funcionario> listaOrdemOriginal = new LinkedList<>();
+    private LinkedList<Funcionario> listaOrdemCodigo = new LinkedList<>();
+    private LinkedList<Funcionario> listaOrdemNome = new LinkedList<>();
 
     @FXML
     private TableView<Funcionario> tableFuncionario;
@@ -55,30 +62,44 @@ public class SelectController implements Initializable {
     @FXML
     private Label lblMenor;
 
+    @FXML
+    private ComboBox<String> cbOrdem;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Dados.recupera(lista);
+        Dados.recupera(listaOrdemOriginal);
 
-        for (Funcionario aux : lista) {
+        for (Funcionario aux : listaOrdemOriginal) {
             aux.difDate();
         }
 
-        int quantidadeFuncionarios = lista.size();
-        double somaSalarios = ListOptions.getSomaSalarios(lista);
+        //noinspection unchecked
+        listaOrdemNome = (LinkedList<Funcionario>) listaOrdemOriginal.clone();
+        listaOrdemNome.sort(new CompareNome());
+
+        //noinspection unchecked
+        listaOrdemCodigo = (LinkedList<Funcionario>) listaOrdemOriginal.clone();
+        listaOrdemCodigo.sort(new CompareCodigo());
+
+        int quantidadeFuncionarios = listaOrdemOriginal.size();
+        double somaSalarios = ListOptions.getSomaSalarios(listaOrdemOriginal);
         double mediaSalarios = somaSalarios / quantidadeFuncionarios;
 
         lblQuantidade.setText(String.valueOf(quantidadeFuncionarios));
         lblSoma.setText("R$" + somaSalarios);
         lblMedia.setText("R$" + mediaSalarios);
         try {
-            lblMaior.setText(ListOptions.maiorSalario(lista).toString());
-            lblMenor.setText(ListOptions.menorSalario(lista).toString());
+            lblMaior.setText(ListOptions.maiorSalario(listaOrdemOriginal).toString());
+            lblMenor.setText(ListOptions.menorSalario(listaOrdemOriginal).toString());
         } catch (IndexOutOfBoundsException e) {
             lblMaior.setText("NaN");
             lblMenor.setText("NaN");
         }
 
-        Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario, columnData, columnDifData, lista);
+        Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario, columnData, columnDifData, listaOrdemOriginal);
+
+        cbOrdem.getItems().addAll("Insercao", "Codigo", "Nome");
+        cbOrdem.getSelectionModel().selectFirst();
     }
 
     @FXML
@@ -89,8 +110,11 @@ public class SelectController implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
-            lista.clear();
-            Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario, columnData, columnDifData, lista);
+            listaOrdemOriginal.clear();
+            listaOrdemCodigo.clear();
+            listaOrdemNome.clear();
+            cbOrdem.getSelectionModel().select("Insercao");
+            Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario, columnData, columnDifData, listaOrdemOriginal);
 
             lblQuantidade.setText("0");
             lblSoma.setText("R$0.0");
@@ -102,10 +126,27 @@ public class SelectController implements Initializable {
 
     @FXML
     private void voltar(ActionEvent event) throws IOException {
-        Dados.salvar(lista);
+        Dados.salvar(listaOrdemOriginal, listaOrdemCodigo, listaOrdemNome);
         switchToPrincipal(event);
     }
 
+    @FXML
+    private void alterarComboBox() {
+        String opcao = cbOrdem.getSelectionModel().getSelectedItem();
+
+        switch (opcao) {
+            case "Insercao" -> Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome,
+                    columnSalario, columnData, columnDifData, listaOrdemOriginal);
+            case "Codigo" -> Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario,
+                    columnData, columnDifData, listaOrdemCodigo);
+            case "Nome" -> Auxiliar.montaTabela(tableFuncionario, columnCod, columnNome, columnSalario,
+                    columnData, columnDifData, listaOrdemNome);
+        }
+    }
+
+    /*
+     * Carrega a tela inicial
+     */
     public void switchToPrincipal(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("principal.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
