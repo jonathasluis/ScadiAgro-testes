@@ -4,6 +4,7 @@ import backEnd.compare.CompareCodigo;
 import backEnd.compare.CompareNome;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Dados { // Salva e recupera os dados dos arquivos
@@ -15,7 +16,7 @@ public class Dados { // Salva e recupera os dados dos arquivos
     /*
      * Ordena e salva a lista nos arquivos;
      */
-    public static void salvar(List<Funcionario> lista) {
+    public static void salvar(LinkedList<Funcionario> lista) {
 
         try {
             ListOptions.gravaLista(ARQUIVO_NAO_INDEXADO, lista);
@@ -34,7 +35,8 @@ public class Dados { // Salva e recupera os dados dos arquivos
     /*
      * Salva nos arquivos listas ja odenadas
      */
-    public static void salvar(List<Funcionario> listaOriginal, List<Funcionario> listaCod, List<Funcionario> listaNome) {
+    public static void salvar(LinkedList<Funcionario> listaOriginal, LinkedList<Funcionario> listaCod,
+                              LinkedList<Funcionario> listaNome) {
 
         try {
             ListOptions.gravaLista(ARQUIVO_NAO_INDEXADO, listaOriginal);
@@ -51,7 +53,7 @@ public class Dados { // Salva e recupera os dados dos arquivos
     /*
      * Recupera os dados dos arquivos
      */
-    public static void recupera(List<Funcionario> listaNaoOrdenada) {
+    public static void recupera(LinkedList<Funcionario> listaNaoOrdenada) {
         try {
             ListOptions.leArquivo(ARQUIVO_NAO_INDEXADO, listaNaoOrdenada);
         } catch (IOException e) {

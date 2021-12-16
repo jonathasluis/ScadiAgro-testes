@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.LinkedList;
 
 /*
  * classe auxiliar para a verificaçao de campos e criaçao das tabelas
@@ -17,7 +17,7 @@ import java.util.List;
 public class Auxiliar {
 
     public static boolean verificaCampos(TextField tfCodigo, TextField tfNome, TextField tfSalario, TextField tfData,
-                                         List<Funcionario> lista, String classe) {
+                                         LinkedList<Funcionario> lista, String classe) {
 
         if (!tfCodigo.getText().trim().matches("^\\d*[0-9]$") || tfCodigo.getText().equals("0")) {
             alerta("Codigo Invalido!");
@@ -65,7 +65,7 @@ public class Auxiliar {
      */
     static void montaTabela(TableView<Funcionario> tableFuncionario, TableColumn<Funcionario, Integer> columnCod,
                             TableColumn<Funcionario, String> columnNome, TableColumn<Funcionario, String> columnSalario,
-                            TableColumn<Funcionario, LocalDate> columnData, List<Funcionario> lista) {
+                            TableColumn<Funcionario, LocalDate> columnData, LinkedList<Funcionario> lista) {
 
         columnCod.setCellValueFactory(new PropertyValueFactory<>("codFuncionario"));
         columnNome.setCellValueFactory(new PropertyValueFactory<>("nomeFuncionario"));
@@ -81,7 +81,7 @@ public class Auxiliar {
     static void montaTabela(TableView<Funcionario> tableFuncionario, TableColumn<Funcionario, Integer> columnCod,
                             TableColumn<Funcionario, String> columnNome, TableColumn<Funcionario, String> columnSalario,
                             TableColumn<Funcionario, LocalDate> columnData, TableColumn<Funcionario, String> columnDifData,
-                            List<Funcionario> lista) {
+                            LinkedList<Funcionario> lista) {
 
         columnCod.setCellValueFactory(new PropertyValueFactory<>("codFuncionario"));
         columnNome.setCellValueFactory(new PropertyValueFactory<>("nomeFuncionario"));

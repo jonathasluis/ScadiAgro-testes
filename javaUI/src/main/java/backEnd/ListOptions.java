@@ -2,7 +2,7 @@ package backEnd;
 
 import java.io.*;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.LinkedList;
 
 /*
  * Classe com as operações feitas com as listas
@@ -12,7 +12,7 @@ public class ListOptions {
     /*
      * Verifica se possui o codigo na lista, se possuir, retorna o objeto que o contem
      */
-    public static Funcionario buscaCod(List<Funcionario> lista, int codigo) {
+    public static Funcionario buscaCod(LinkedList<Funcionario> lista, int codigo) {
         for (Funcionario aux : lista) {
             if (aux.getCodFuncionario() == codigo) {
                 return aux;
@@ -24,7 +24,7 @@ public class ListOptions {
     /*
      * Retorna a soma dos salarios na lista
      */
-    public static double getSomaSalarios(List<Funcionario> lista) {
+    public static double getSomaSalarios(LinkedList<Funcionario> lista) {
         double soma = 0d;
 
         for (Funcionario funcionario : lista) {
@@ -37,7 +37,7 @@ public class ListOptions {
      * Retorna o funcionario com o menor salario
      */
 
-    public static Funcionario menorSalario(List<Funcionario> lista) {
+    public static Funcionario menorSalario(LinkedList<Funcionario> lista) {
         Funcionario funcMenorSalario = lista.get(0);
         Funcionario aux;
 
@@ -53,7 +53,7 @@ public class ListOptions {
     /*
      * Retorna o funcionario com o maior salario
      */
-    public static Funcionario maiorSalario(List<Funcionario> lista) {
+    public static Funcionario maiorSalario(LinkedList<Funcionario> lista) {
         Funcionario funcMaiorSalario = lista.get(0);
         Funcionario aux;
 
@@ -69,7 +69,7 @@ public class ListOptions {
     /*
      * Grava a lista no arquivo
      */
-    public static void gravaLista(String nomeArquivo, List<Funcionario> lista) throws IOException {
+    public static void gravaLista(String nomeArquivo, LinkedList<Funcionario> lista) throws IOException {
         String dados;
         BufferedWriter buffWrite = new BufferedWriter(new FileWriter(nomeArquivo));
 
@@ -83,7 +83,7 @@ public class ListOptions {
     /*
      * Lê arquivo e controi lista
      */
-    public static void leArquivo(String nomeArquivo, List<Funcionario> lista) throws IOException {
+    public static void leArquivo(String nomeArquivo, LinkedList<Funcionario> lista) throws IOException {
         BufferedReader buffRead = new BufferedReader(new FileReader(nomeArquivo));
         String linha;
 
