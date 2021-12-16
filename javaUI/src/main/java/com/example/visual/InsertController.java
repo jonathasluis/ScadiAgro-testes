@@ -92,7 +92,7 @@ public class InsertController implements Initializable {
     /*
      * Carrega a tela inicial
      */
-    public void switchToPrincipal(ActionEvent event) throws IOException {
+    private void switchToPrincipal(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("principal.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

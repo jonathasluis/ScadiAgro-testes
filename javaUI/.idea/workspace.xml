@@ -5,30 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="Commit 15/12 - final&#10;&#10;- Criação das classes CompareCodigo e CompareNome para utilizar a ordenação da lista;&#10;- Refatoração de todas as classes;&#10;- Implementação da ordenação por codigo e nome nas classes Dados e SelectController;&#10;- Implemetação de salvar arquivos indexados nas classes InsertController, UpdateController e SelectController;&#10;- ComboBox para selecionar o modo de ordenação na tabela em Select">
-      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/compare/CompareCodigo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backEnd/compare/CompareNome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Dados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Dados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Format.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/Auxiliar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Auxiliar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/PrincipalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/SelectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/SelectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/UpdateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/select.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/select.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/SelectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/SelectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/UpdateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/UpdateController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/insert.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/select.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/select.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/update.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +110,8 @@
       <workItem from="1639339741343" duration="458000" />
       <workItem from="1639393195421" duration="16229000" />
       <workItem from="1639479535899" duration="13728000" />
-      <workItem from="1639565651222" duration="13187000" />
+      <workItem from="1639565651222" duration="13260000" />
+      <workItem from="1639652300779" duration="865000" />
     </task>
     <task id="LOCAL-00001" summary="Primeiro commit&#10;&#10;- criaçao da tela inicial&#10;- ciacao da tela de insercao">
       <created>1639174313397</created>
@@ -187,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639494098531</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commit 15/12 - final&#10;&#10;- Criação das classes CompareCodigo e CompareNome para utilizar a ordenação da lista;&#10;- Refatoração de todas as classes;&#10;- Implementação da ordenação por codigo e nome nas classes Dados e SelectController;&#10;- Implemetação de salvar arquivos indexados nas classes InsertController, UpdateController e SelectController;&#10;- ComboBox para selecionar o modo de ordenação na tabela em Select">
+      <created>1639580601458</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639580601458</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
