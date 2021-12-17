@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="Commit 16/12 - final&#10;&#10;- Encapsulamento de metodos e variaveis">
+    <list default="true" id="96952b83-109f-4496-acf5-823c7a372030" name="Changes" comment="Commit 16/12 - final&#10;&#10;- List to LinkedList">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/Dados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/Dados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backEnd/ListOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/Auxiliar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Auxiliar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/InsertController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/PrincipalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/SelectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/SelectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/visual/UpdateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/visual/UpdateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/InsertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/PrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/SelectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/SelectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/visual/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/visual/UpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/insert.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/select.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/select.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/visual/update.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,8 @@
       <workItem from="1639393195421" duration="16229000" />
       <workItem from="1639479535899" duration="13728000" />
       <workItem from="1639565651222" duration="13260000" />
-      <workItem from="1639652300779" duration="2014000" />
+      <workItem from="1639652300779" duration="3246000" />
+      <workItem from="1639739246590" duration="4870000" />
     </task>
     <task id="LOCAL-00001" summary="Primeiro commit&#10;&#10;- criaçao da tela inicial&#10;- ciacao da tela de insercao">
       <created>1639174313397</created>
@@ -186,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639653383545</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Commit 16/12 - final&#10;&#10;- List to LinkedList">
+      <created>1639655452331</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639655452331</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +256,8 @@
     <MESSAGE value="Commit 14/12&#10;&#10;- Criação da classe &quot;Auxiliar&quot; para verificar campos e montar tabela;&#10;- Classe &quot;InsertController&quot; e &quot;UpdateController&quot; adaptadas para utilizar a classe &quot;Auxiliar&quot;;&#10;- Implementação da alteração e exclusao de dados na classe &quot;UpdateController&quot;;&#10;- Janela Select implementada;&#10;- Classe &quot;SelectController&quot; (visualiza os dados) e pode excluir todos os registros;&#10;- Classe &quot;Funcionario&quot; adaptada para colocar dados na tabela (variavel tempoEmpresa);" />
     <MESSAGE value="Commit 15/12 - final&#10;&#10;- Criação das classes CompareCodigo e CompareNome para utilizar a ordenação da lista;&#10;- Refatoração de todas as classes;&#10;- Implementação da ordenação por codigo e nome nas classes Dados e SelectController;&#10;- Implemetação de salvar arquivos indexados nas classes InsertController, UpdateController e SelectController;&#10;- ComboBox para selecionar o modo de ordenação na tabela em Select" />
     <MESSAGE value="Commit 16/12 - final&#10;&#10;- Encapsulamento de metodos e variaveis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 16/12 - final&#10;&#10;- Encapsulamento de metodos e variaveis" />
+    <MESSAGE value="Commit 16/12 - final&#10;&#10;- List to LinkedList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 16/12 - final&#10;&#10;- List to LinkedList" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

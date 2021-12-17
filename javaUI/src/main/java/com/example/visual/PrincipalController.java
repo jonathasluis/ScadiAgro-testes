@@ -25,6 +25,7 @@ public class PrincipalController {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("INSERT");
         stage.show();
     }
 
@@ -37,6 +38,7 @@ public class PrincipalController {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("UPDATE");
         stage.show();
     }
 
@@ -49,6 +51,7 @@ public class PrincipalController {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("SELECT");
         stage.show();
     }
 }
