@@ -31,7 +31,7 @@ public class Auxiliar {
             return false;
         }
 
-        if (!tfSalario.getText().trim().matches("^\\d*[0-9](,|.\\d*[0-9])?$")) {
+        if (!tfSalario.getText().trim().matches("^(\\d*[0-9])(([,.])[0-9][0-9])?$")) {
             alerta("Salario Invalido!");
             tfSalario.requestFocus();
             return false;
