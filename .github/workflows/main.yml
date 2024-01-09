@@ -1,0 +1,3 @@
+              - name: Simple Merge
+                uses: buildsville/simple-merge@v1.0.1
+            
